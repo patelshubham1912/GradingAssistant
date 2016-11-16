@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Grading Assistant</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Second">Second</string>
+    <string name="First">First</string>
+
+    <string-array name="courseList1">
+        <item>DBMS</item>
+        <item>DBMS2</item>
+        <item>DBMS3</item>
+    </string-array>
+
+    <string-array name="courseList2">
+        <item>DBMS</item>
+        <item>DBMS2</item>
+        <item>DBMS3</item>
+    </string-array>
+
+    <string-array name="courseList3">
+        <item>DBMS</item>
+        <item>DBMS2</item>
+        <item>DBMS3</item>
+    </string-array>
+
+    <string-array name="majorType">
+        <item>SWE</item>
+        <item>CSE</item>
+        <item>CE</item>
+    </string-array>
+
+    <string-array name="specializationType">
+        <item>DB</item>
+        <item>SE</item>
+        <item>AI</item>
+    </string-array>
+</resources>

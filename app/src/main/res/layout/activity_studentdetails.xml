@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Name: Srishti Nair"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="71dp"
+        android:id="@+id/editText7" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Student ID: 1001436642"
+        android:ems="10"
+        android:layout_marginTop="22dp"
+        android:id="@+id/editText8"
+        android:layout_below="@+id/editText7"
+        android:layout_alignStart="@+id/editText7" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Email ID: srishti@gmail.com"
+        android:ems="10"
+        android:layout_marginTop="27dp"
+        android:id="@+id/editText10"
+        android:layout_below="@+id/editText8"
+        android:layout_alignStart="@+id/editText8" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:layout_below="@+id/editText12"
+        android:layout_alignEnd="@+id/editText12"
+        android:layout_marginTop="10dp"
+        android:id="@+id/editText13"
+        android:text="CSE 5330" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="CSE 5331"
+        android:ems="10"
+        android:layout_below="@+id/editText13"
+        android:layout_alignStart="@+id/editText13"
+        android:id="@+id/editText14" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="CSE 5100"
+        android:ems="10"
+        android:id="@+id/editText15"
+        android:layout_below="@+id/editText14"
+        android:layout_alignStart="@+id/editText14" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editText12"
+        android:text="Courses:"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/editText10"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="27dp" />
+
+
+</RelativeLayout>

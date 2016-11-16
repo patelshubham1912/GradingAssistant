@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText10"
+        android:layout_marginTop="64dp"
+        android:hint="Course ID"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/button4"
+        android:layout_marginEnd="69dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:id="@+id/button4"
+        android:layout_alignBottom="@+id/editText10"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="56dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/textView"
+        android:layout_below="@+id/editText10"
+        android:layout_toStartOf="@+id/button4"
+        android:layout_marginTop="54dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText11"
+        android:hint="Course Name"
+        android:layout_alignTop="@+id/textView"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText12"
+        android:hint="Pre-requisite 1"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText13"
+        android:hint="Pre-requisite 2"
+        android:layout_marginTop="46dp"
+        android:layout_below="@+id/editText12"
+        android:layout_alignStart="@+id/editText12" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:id="@+id/button5"
+        android:layout_marginTop="42dp"
+        android:layout_below="@+id/editText13"
+        android:layout_alignStart="@+id/editText11"
+        android:layout_alignEnd="@+id/editText13" />
+
+</RelativeLayout>

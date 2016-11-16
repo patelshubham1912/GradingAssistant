@@ -1,0 +1,157 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="com.shubham.gradingassistant.FirstFragment">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="0dp"
+        >
+        <RelativeLayout
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_gravity="left|top"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+
+        android:background="@drawable/border_layout"
+            android:id="@+id/relativeLayout">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Courses"
+            android:gravity="center"
+            android:id="@+id/textView2"
+            android:background="#000000"
+            android:textColor="#ffffff"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Course1"
+            android:id="@+id/button2"
+            android:layout_below="@+id/textView2"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Course2"
+            android:id="@+id/button3"
+            android:layout_below="@+id/button2"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Course3"
+            android:id="@+id/button4"
+            android:layout_below="@+id/button3"
+            android:layout_alignStart="@+id/button3" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_gravity="right|top"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignTop="@+id/relativeLayout"
+        android:layout_toEndOf="@+id/relativeLayout"
+        android:background="@drawable/border_layout"
+        android:id="@+id/relativeLayout3">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="GPA"
+            android:id="@+id/textView3"
+            android:gravity="center"
+            android:background="#000000"
+            android:textColor="#ffffff"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:textSize="75dp"
+            android:textColor="#000000"
+            android:text="3.5"
+            android:layout_below="@+id/textView3"
+            android:id="@+id/textView4"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_gravity="left|top"
+        android:layout_marginTop="300dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+
+        android:background="@drawable/border_layout"
+        android:id="@+id/relativeLayout2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:text="Notifications"
+            android:id="@+id/textView5"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_gravity="right|top"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/border_layout"
+        android:layout_alignTop="@+id/relativeLayout2"
+        android:layout_toEndOf="@+id/relativeLayout2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:text="Progress Tracker"
+            android:id="@+id/textView5"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+        </RelativeLayout>
+</ScrollView>
+</FrameLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--Admin
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_first" android:icon="@drawable/ic_action_name"
+            android:title="Create User" />
+        <item android:id="@+id/nav_second" android:icon="@drawable/ic_action_name"
+            android:title="Delete User" />
+        <item android:id="@+id/nav_third" android:icon="@drawable/ic_action_name"
+            android:title="Edit User" />
+        <item android:id="@+id/nav_fifth"  android:icon="@drawable/ic_action_name"
+            android:title="Create Course" />
+        <item android:id="@+id/nav_sixth" android:icon="@drawable/ic_action_name"
+            android:title="Edit Course" />
+        <item android:id="@+id/nav_seventh" android:icon="@drawable/ic_action_name"
+            android:title="Link Course and Professor" />
+        <item android:id="@+id/nav_eigth" android:icon="@drawable/ic_action_name"
+            android:title="Send Notifications" />
+        <item android:id="@+id/nav_ninth" android:icon="@drawable/ic_action_name"
+            android:title="View Course" />
+        <item android:id="@+id/nav_tenth" android:icon="@drawable/ic_action_name"
+            android:title="View Professor Details" />
+        <item android:id="@+id/nav_Eleventh" android:icon="@drawable/ic_action_name"
+            android:title="View Student Details" />
+
+    </group>
+
+
+    <group android:checkableBehavior="single">
+            <item android:id="@+id/nav_first" android:icon="@drawable/ic_action_name"
+                android:title="Course Description" />
+            <item android:id="@+id/nav_second" android:icon="@drawable/ic_action_name"
+                android:title="Assignments" />
+            <item android:id="@+id/nav_third" android:icon="@drawable/ic_action_name"
+                android:title="Slides" />
+            <item android:id="@+id/nav_fifth"  android:icon="@drawable/ic_action_name"
+                android:title="Quizzes" />
+            <item android:id="@+id/nav_sixth" android:icon="@drawable/ic_action_name"
+                android:title="Projects" />
+            <item android:id="@+id/nav_seventh" android:icon="@drawable/ic_action_name"
+                android:title="Grades" />
+            <item android:id="@+id/nav_ninth" android:icon="@drawable/ic_action_name"
+                android:title="Class Activity Result" />
+        </group>
+        -->
+
+        <group android:checkableBehavior="single">
+            <item android:id="@+id/nav_first" android:icon="@drawable/ic_action_name"
+                android:title="Course Description" />
+            <item android:id="@+id/nav_second" android:icon="@drawable/ic_action_name"
+                android:title="Assignments" />
+            <item android:id="@+id/nav_third" android:icon="@drawable/ic_action_name"
+                android:title="Slides" />
+            <item android:id="@+id/nav_fifth"  android:icon="@drawable/ic_action_name"
+                android:title="Quizzes" />
+            <item android:id="@+id/nav_sixth" android:icon="@drawable/ic_action_name"
+                android:title="Projects" />
+            <item android:id="@+id/nav_seventh" android:icon="@drawable/ic_action_name"
+                android:title="Update Grades" />
+            <item android:id="@+id/nav_eigth" android:icon="@drawable/ic_action_name"
+                android:title="Graphical Representation" />
+            <item android:id="@+id/nav_tenth" android:icon="@drawable/ic_action_name"
+                android:title="Average Class GPA" />
+            <item android:id="@+id/nav_eleventh" android:icon="@drawable/ic_action_name"
+                android:title="Change Password" />
+            <item android:id="@+id/nav_twelth" android:icon="@drawable/ic_action_name"
+            android:title="Send Query" />
+
+        </group>
+
+</menu>
