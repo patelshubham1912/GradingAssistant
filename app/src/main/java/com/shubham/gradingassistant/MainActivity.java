@@ -45,11 +45,24 @@ public class MainActivity extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
+
+
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        Menu menu = navigationView.getMenu();
+        //Admin View
+        menu.setGroupCheckable(R.id.Admin,false,false);
+        menu.setGroupVisible(R.id.Admin,false);
+        //Student View
+        menu.setGroupCheckable(R.id.Student,true,true);
+        menu.setGroupVisible(R.id.Student,true);
+        //Professor View
+        menu.setGroupCheckable(R.id.Professor,false,false);
+        menu.setGroupVisible(R.id.Professor,false);
     }
 
     @Override
+
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -87,14 +100,14 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_second) {
+        if (id == R.id.nav_second1) {
             // First Fragment
             FirstFragment fragment = new FirstFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container,fragment);
             fragmentTransaction.commit();
 
-        } else if (id == R.id.nav_third) {
+        } else if (id == R.id.nav_third1) {
             // Second Fragment
             SecondFragment fragment = new SecondFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
