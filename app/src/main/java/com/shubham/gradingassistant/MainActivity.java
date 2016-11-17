@@ -54,11 +54,11 @@ public class MainActivity extends AppCompatActivity
         menu.setGroupCheckable(R.id.Admin,false,false);
         menu.setGroupVisible(R.id.Admin,false);
         //Student View
-        menu.setGroupCheckable(R.id.Student,true,true);
-        menu.setGroupVisible(R.id.Student,true);
+        menu.setGroupCheckable(R.id.Student,false,false);
+        menu.setGroupVisible(R.id.Student,false);
         //Professor View
-        menu.setGroupCheckable(R.id.Professor,false,false);
-        menu.setGroupVisible(R.id.Professor,false);
+        menu.setGroupCheckable(R.id.Professor,true,true);
+        menu.setGroupVisible(R.id.Professor,true);
     }
 
     @Override
@@ -110,6 +110,12 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_third1) {
             // Second Fragment
             SecondFragment fragment = new SecondFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container,fragment);
+            fragmentTransaction.commit();
+        } else if (id == R.id.nav_changepassword) {
+            // Second Fragment
+            ChangepasswordFragment fragment = new ChangepasswordFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container,fragment);
             fragmentTransaction.commit();
