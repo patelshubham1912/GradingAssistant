@@ -16,7 +16,7 @@
             android:title="Link Course and Professor" />
         <item android:id="@+id/nav_eigth1" android:icon="@drawable/ic_action_name"
             android:title="Send Notifications" />
-        <item android:id="@+id/nav_ninth1" android:icon="@drawable/ic_action_name"
+        <item android:id="@+id/nav_viewcourse" android:icon="@drawable/ic_action_name"
             android:title="View Course" />
         <item android:id="@+id/nav_tenth" android:icon="@drawable/ic_action_name"
             android:title="View Professor Details" />
