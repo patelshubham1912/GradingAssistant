@@ -107,13 +107,15 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.fragment_container,fragment);
             fragmentTransaction.commit();
 
-        } else if (id == R.id.nav_third3) {
-            // Second Fragment
-            SecondFragment fragment = new SecondFragment();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container,fragment);
-            fragmentTransaction.commit();
-        } else if (id == R.id.nav_changepassword) {
+        }
+//        else if (id == R.id.nav_third3) {
+//            // Second Fragment
+//            SecondFragment fragment = new SecondFragment();
+//            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+//            fragmentTransaction.replace(R.id.fragment_container,fragment);
+//            fragmentTransaction.commit();
+//        }
+        else if (id == R.id.nav_changepassword) {
             // Second Fragment
             ChangepasswordFragment fragment = new ChangepasswordFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -177,6 +179,20 @@ public class MainActivity extends AppCompatActivity
         else if (id == R.id.nav_professordetails) {
             // Second Fragment
             ProfessordetailsFragment fragment = new ProfessordetailsFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container,fragment);
+            fragmentTransaction.commit();
+        }
+        else if (id == R.id.nav_addslide) {
+            // Second Fragment
+            AddslidesFragment fragment = new AddslidesFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container,fragment);
+            fragmentTransaction.commit();
+        }
+        else if (id == R.id.nav_updategrades) {
+            // Second Fragment
+            UpdategradeFragment fragment = new UpdategradeFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container,fragment);
             fragmentTransaction.commit();

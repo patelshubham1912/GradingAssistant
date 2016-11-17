@@ -49,13 +49,13 @@
                 android:title="Course Description" />
             <item android:id="@+id/nav_second3" android:icon="@drawable/ic_action_name"
                 android:title="Assignments" />
-            <item android:id="@+id/nav_third3" android:icon="@drawable/ic_action_name"
+            <item android:id="@+id/nav_addslide" android:icon="@drawable/ic_action_name"
                 android:title="Slides" />
             <item android:id="@+id/nav_fifth3"  android:icon="@drawable/ic_action_name"
                 android:title="Quizzes" />
             <item android:id="@+id/nav_sixth3" android:icon="@drawable/ic_action_name"
                 android:title="Projects" />
-            <item android:id="@+id/nav_seventh3" android:icon="@drawable/ic_action_name"
+            <item android:id="@+id/nav_updategrades" android:icon="@drawable/ic_action_name"
                 android:title="Update Grades" />
             <item android:id="@+id/nav_eigth3" android:icon="@drawable/ic_action_name"
                 android:title="Graphical Representation" />
