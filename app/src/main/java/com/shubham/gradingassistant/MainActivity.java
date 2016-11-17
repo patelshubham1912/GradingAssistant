@@ -146,6 +146,20 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.fragment_container,fragment);
             fragmentTransaction.commit();
         }
+        else if (id == R.id.nav_editcourse) {
+            // Second Fragment
+            EditcourseFragment fragment = new EditcourseFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container,fragment);
+            fragmentTransaction.commit();
+        }
+        else if (id == R.id.nav_linkcourseandprofessor) {
+            // Second Fragment
+            LinkcourseandprofessorFragment fragment = new LinkcourseandprofessorFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container,fragment);
+            fragmentTransaction.commit();
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
