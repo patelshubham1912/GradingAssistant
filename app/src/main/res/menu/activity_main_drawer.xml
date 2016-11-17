@@ -18,7 +18,7 @@
             android:title="Send Notifications" />
         <item android:id="@+id/nav_viewcourse" android:icon="@drawable/ic_action_name"
             android:title="View Course" />
-        <item android:id="@+id/nav_profe" android:icon="@drawable/ic_action_name"
+        <item android:id="@+id/nav_professordetails" android:icon="@drawable/ic_action_name"
             android:title="View Professor Details" />
         <item android:id="@+id/nav_studentdetails" android:icon="@drawable/ic_action_name"
             android:title="View Student Details" />
