@@ -51,14 +51,14 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         Menu menu = navigationView.getMenu();
         //Admin View
-        menu.setGroupCheckable(R.id.Admin,false,false);
-        menu.setGroupVisible(R.id.Admin,false);
+        menu.setGroupCheckable(R.id.Admin,true,true);
+        menu.setGroupVisible(R.id.Admin,true);
         //Student View
         menu.setGroupCheckable(R.id.Student,false,false);
         menu.setGroupVisible(R.id.Student,false);
         //Professor View
-        menu.setGroupCheckable(R.id.Professor,true,true);
-        menu.setGroupVisible(R.id.Professor,true);
+        menu.setGroupCheckable(R.id.Professor,false,false);
+        menu.setGroupVisible(R.id.Professor,false);
     }
 
     @Override
@@ -116,6 +116,13 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_changepassword) {
             // Second Fragment
             ChangepasswordFragment fragment = new ChangepasswordFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container,fragment);
+            fragmentTransaction.commit();
+        }
+        else if (id == R.id.nav_createUser) {
+            // Second Fragment
+            CreateuserFragment fragment = new CreateuserFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container,fragment);
             fragmentTransaction.commit();

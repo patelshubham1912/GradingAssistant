@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single"  android:id="@+id/Admin" android:visible="true">
-        <item android:id="@+id/nav_first1" android:icon="@drawable/ic_action_name"
+        <item android:id="@+id/nav_createUser" android:icon="@drawable/ic_action_name"
             android:title="Create User" />
         <item android:id="@+id/nav_second1" android:icon="@drawable/ic_action_name"
             android:title="Delete User" />
