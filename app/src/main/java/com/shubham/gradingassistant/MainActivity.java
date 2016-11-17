@@ -54,11 +54,11 @@ public class MainActivity extends AppCompatActivity
         menu.setGroupCheckable(R.id.Admin,true,true);
         menu.setGroupVisible(R.id.Admin,true);
         //Student View
-        menu.setGroupCheckable(R.id.Student,false,false);
-        menu.setGroupVisible(R.id.Student,false);
+        menu.setGroupCheckable(R.id.Student,true,true);
+        menu.setGroupVisible(R.id.Student,true);
         //Professor View
-        menu.setGroupCheckable(R.id.Professor,false,false);
-        menu.setGroupVisible(R.id.Professor,false);
+        menu.setGroupCheckable(R.id.Professor,true,true);
+        menu.setGroupVisible(R.id.Professor,true);
     }
 
     @Override
