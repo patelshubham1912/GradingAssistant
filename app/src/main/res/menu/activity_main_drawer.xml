@@ -63,7 +63,7 @@
                 android:title="Average Class GPA" />
             <item android:id="@+id/nav_changepassword" android:icon="@drawable/ic_action_name"
                 android:title="Change Password" />
-            <item android:id="@+id/nav_twelth3" android:icon="@drawable/ic_action_name"
+            <item android:id="@+id/nav_sendquery" android:icon="@drawable/ic_action_name"
             android:title="Send Query" />
 
         </group>
