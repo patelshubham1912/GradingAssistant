@@ -4,11 +4,11 @@
     <group android:checkableBehavior="single"  android:id="@+id/Admin" android:visible="true">
         <item android:id="@+id/nav_createUser" android:icon="@drawable/ic_action_name"
             android:title="Create User" />
-        <item android:id="@+id/nav_second1" android:icon="@drawable/ic_action_name"
+        <item android:id="@+id/nav_deleteuser" android:icon="@drawable/ic_action_name"
             android:title="Delete User" />
-        <item android:id="@+id/nav_third1" android:icon="@drawable/ic_action_name"
+        <item android:id="@+id/nav_edituser" android:icon="@drawable/ic_action_name"
             android:title="Edit User" />
-        <item android:id="@+id/nav_fifth1"  android:icon="@drawable/ic_action_name"
+        <item android:id="@+id/nav_createcourse"  android:icon="@drawable/ic_action_name"
             android:title="Create Course" />
         <item android:id="@+id/nav_sixth1" android:icon="@drawable/ic_action_name"
             android:title="Edit Course" />

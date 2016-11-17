@@ -100,14 +100,14 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_second1) {
+        if (id == R.id.nav_second3) {
             // First Fragment
             FirstFragment fragment = new FirstFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container,fragment);
             fragmentTransaction.commit();
 
-        } else if (id == R.id.nav_third1) {
+        } else if (id == R.id.nav_third3) {
             // Second Fragment
             SecondFragment fragment = new SecondFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -119,10 +119,29 @@ public class MainActivity extends AppCompatActivity
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container,fragment);
             fragmentTransaction.commit();
-        }
-        else if (id == R.id.nav_createUser) {
+        } else if (id == R.id.nav_createUser) {
             // Second Fragment
             CreateuserFragment fragment = new CreateuserFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container,fragment);
+            fragmentTransaction.commit();
+        } else if (id == R.id.nav_deleteuser) {
+            // Second Fragment
+            DeleteuserFragment fragment = new DeleteuserFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container,fragment);
+            fragmentTransaction.commit();
+        }
+        else if (id == R.id.nav_edituser) {
+            // Second Fragment
+            EdituserFragment fragment = new EdituserFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container,fragment);
+            fragmentTransaction.commit();
+        }
+        else if (id == R.id.nav_createcourse) {
+            // Second Fragment
+            CreatecourseFragment fragment = new CreatecourseFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container,fragment);
             fragmentTransaction.commit();
