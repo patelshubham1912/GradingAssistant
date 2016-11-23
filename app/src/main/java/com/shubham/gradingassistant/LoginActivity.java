@@ -36,16 +36,16 @@ public class LoginActivity extends Activity{
             public void onClick(View v) {
                 String u=user_id.getText().toString();
                 String p=password.getText().toString();
-                String method = "Login";
-
-                BackgroundTask backgroundTask=new BackgroundTask(ctx);
-                backgroundTask.execute(u,p);
-//                DAO dao=new DAO();
-//                user=dao.getUser(u,p);
-//                Toast.makeText(getBaseContext(),user,Toast.LENGTH_SHORT).show();
-//                Intent intent=new Intent(getBaseContext() ,MainActivity.class);
-//                intent.putExtra("User_type", user);
-//                startActivity(intent);
+//                String method = "Login";
+//
+//                BackgroundTask backgroundTask=new BackgroundTask(ctx);
+//                backgroundTask.execute(u,p);
+                DAO dao=new DAO();
+                user=dao.getUser(u,p);
+                Toast.makeText(getBaseContext(),user,Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(getBaseContext() ,MainActivity.class);
+                intent.putExtra("User_type", user);
+                startActivity(intent);
 
                // String s = getIntent().getStringExtra("EXTRA_SESSION_ID");-----in Receiving Activity
             }

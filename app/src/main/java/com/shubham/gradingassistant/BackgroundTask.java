@@ -33,7 +33,7 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
     @Override
     protected String doInBackground(String... params) {
 
-        String login_url = "http://192.168.43.116/android_connect/LoginActivity.php";
+        String login_url = "http://192.168.1.68/android_connect/LoginActivity.php";
         try {
             URL url=new URL(login_url);
             HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
