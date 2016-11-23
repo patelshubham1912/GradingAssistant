@@ -1,5 +1,6 @@
-package com.shubham.gradingassistant;
-
+package com.shubham.DAO;
+import com.shubham.Beans.*;
+import com.shubham.gradingassistant.*;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
@@ -19,10 +20,17 @@ import java.net.URLEncoder;
 /**
  * Created by $hubham on 13/10/2016.
  */
-public class BackgroundTask extends AsyncTask<String,Void,String> {
+public class LoginActivityBackgroundTask extends AsyncTask<String,Void,admin_view> {
+    public interface AsyncResponse {
+        void processFinish(admin_view output);
+    }
+
+    public AsyncResponse delegate = null;
     Context ctx;
-    BackgroundTask(Context ctx) {
+    admin_view admin_view=new admin_view();
+    public LoginActivityBackgroundTask(Context ctx,AsyncResponse delegate) {
         this.ctx=ctx;
+        this.delegate=delegate;
     }
 
     @Override
@@ -31,7 +39,7 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
     }
 
     @Override
-    protected String doInBackground(String... params) {
+    protected admin_view doInBackground(String... params) {
 
         String login_url = "http://192.168.43.116/android_connect/LoginActivity.php";
         try {
@@ -57,11 +65,11 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
 
                 response+=line;
             }
-
+            admin_view.setEmail_id(response);
             bufferedReader.close();
             IS.close();
             httpURLConnection.disconnect();
-            return response;
+            return admin_view;
         }
         catch (MalformedURLException e)
         {
@@ -79,7 +87,13 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
     }
 
     @Override
-    protected void onPostExecute(String result) {
-        Toast.makeText(ctx,result,Toast.LENGTH_SHORT).show();
+    protected void onPostExecute(admin_view result) {
+        Toast.makeText(ctx,result.getEmail_id(),Toast.LENGTH_SHORT).show();
+       //setValues(result);
+       delegate.processFinish(result);
+       // LoginActivity loginActivity=new LoginActivity();
+       // loginActivity.setReturnResult(result);
     }
+
+
 }

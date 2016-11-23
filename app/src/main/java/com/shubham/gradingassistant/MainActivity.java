@@ -1,5 +1,6 @@
 package com.shubham.gradingassistant;
-
+import com.shubham.Beans.*;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -10,10 +11,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    admin_view admin_view=new admin_view();
     NavigationView navigationView=null;
     Toolbar toolbar = null;
     @Override
@@ -50,15 +53,43 @@ public class MainActivity extends AppCompatActivity
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         Menu menu = navigationView.getMenu();
-        //Admin View
-        menu.setGroupCheckable(R.id.Admin,true,true);
-        menu.setGroupVisible(R.id.Admin,true);
-        //Student View
-        menu.setGroupCheckable(R.id.Student,true,true);
-        menu.setGroupVisible(R.id.Student,true);
-        //Professor View
-        menu.setGroupCheckable(R.id.Professor,true,true);
-        menu.setGroupVisible(R.id.Professor,true);
+
+        Intent i=getIntent();
+        admin_view=(admin_view)i.getSerializableExtra("admin_view");
+        Toast.makeText(getBaseContext(),admin_view.getEmail_id(),Toast.LENGTH_SHORT).show();
+
+        if(admin_view.getEmail_id().equals("abc"))
+        {
+            //Admin View
+            menu.setGroupCheckable(R.id.Admin, true, true);
+            menu.setGroupVisible(R.id.Admin, true);
+            menu.setGroupCheckable(R.id.Student,false,false);
+            menu.setGroupVisible(R.id.Student,false);
+            menu.setGroupCheckable(R.id.Professor,false,false);
+            menu.setGroupVisible(R.id.Professor,false);
+        }
+        else if(admin_view.getEmail_id().equals("xyz"))
+        {
+            //Student View
+            menu.setGroupCheckable(R.id.Admin, false, false);
+            menu.setGroupVisible(R.id.Admin, false);
+            menu.setGroupCheckable(R.id.Student,true,true);
+            menu.setGroupVisible(R.id.Student,true);
+            menu.setGroupCheckable(R.id.Professor,false,false);
+            menu.setGroupVisible(R.id.Professor,false);
+        }else
+        {
+            //Professor View
+            menu.setGroupCheckable(R.id.Admin, false, false);
+            menu.setGroupVisible(R.id.Admin, false);
+            menu.setGroupCheckable(R.id.Student,false,false);
+            menu.setGroupVisible(R.id.Student,false);
+            menu.setGroupCheckable(R.id.Professor,true,true);
+            menu.setGroupVisible(R.id.Professor,true);
+        }
+
+
+
     }
 
     @Override

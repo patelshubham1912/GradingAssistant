@@ -1,10 +1,10 @@
 package com.shubham.Beans;
-
+import  java.io.Serializable;
 /**
  * Created by $hubham on 22/11/2016.
  */
 
-public class admin_view {
+public class admin_view implements Serializable{
     private String user_id;
     private String user_type;
     private String user_name;
