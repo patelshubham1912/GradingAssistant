@@ -7,7 +7,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editText3"
+        android:id="@+id/createuser_username"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="66dp"
@@ -16,29 +16,40 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText4"
-        android:layout_below="@+id/editText3"
-        android:layout_alignStart="@+id/editText3"
+        android:id="@+id/createuser_userid"
+        android:layout_below="@+id/createuser_username"
+        android:layout_alignStart="@+id/createuser_username"
         android:layout_marginTop="42dp"
         android:hint="Student ID"
-        android:layout_alignEnd="@+id/editText3" />
+        android:layout_alignEnd="@+id/createuser_username" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/editText5"
-        android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/editText4"
-        android:hint="Email ID" />
+        android:id="@+id/createuser_email"
+        android:hint="Email ID"
+        android:layout_marginTop="31dp"
+        android:layout_below="@+id/createuser_userid"
+        android:layout_alignStart="@+id/createuser_userid" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Create"
-        android:id="@+id/button2"
-        android:layout_below="@+id/editText5"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="48dp" />
+        android:id="@+id/createuser_create"
+        android:layout_marginTop="77dp"
+        android:layout_below="@+id/createuser_usertype"
+        android:layout_centerHorizontal="true" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/createuser_usertype"
+        android:entries="@array/userType"
+        android:ellipsize="marquee"
+        android:layout_below="@+id/createuser_email"
+        android:layout_alignStart="@+id/createuser_email"
+        android:layout_marginTop="22dp" />
 </RelativeLayout>

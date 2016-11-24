@@ -48,7 +48,7 @@ public class EdituserFragment extends Fragment {
 
                         admin_view=output;
                         Toast.makeText(getContext(),admin_view.getEmail_id(),Toast.LENGTH_SHORT).show();
-                        
+
                        // Intent intent=new Intent(getBaseContext() ,MainActivity.class);
                        // intent.putExtra("admin_view", output);
                        // startActivity(intent);
