@@ -39,14 +39,14 @@ public class LoginActivity extends Activity{
             public void onClick(View v) {
                 String u=user_id.getText().toString();
                 String p=password.getText().toString();
-                String method = "Login";
+                //String method = "Login";
 
                 LoginActivityBackgroundTask backgroundTask=new LoginActivityBackgroundTask(ctx, new LoginActivityBackgroundTask.AsyncResponse() {
                     @Override
                     public void processFinish(admin_view output) {
 
                         admin_view=output;
-                        //Toast.makeText(getBaseContext(),admin_view.getEmail_id(),Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getBaseContext(),admin_view.getEmail_id(),Toast.LENGTH_SHORT).show();
                         Intent intent=new Intent(getBaseContext() ,MainActivity.class);
                         intent.putExtra("admin_view", output);
                         startActivity(intent);

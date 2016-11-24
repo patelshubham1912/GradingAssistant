@@ -4,7 +4,7 @@ import com.shubham.gradingassistant.*;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
-
+import com.shubham.gradingassistant.R;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -41,7 +41,8 @@ public class LoginActivityBackgroundTask extends AsyncTask<String,Void,admin_vie
     @Override
     protected admin_view doInBackground(String... params) {
 
-        String login_url = "http://192.168.43.116/android_connect/LoginActivity.php";
+
+        String login_url = "http://"+ctx.getString(R.string.ip_address)+"/android_connect/LoginActivity.php";
         try {
             URL url=new URL(login_url);
             HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();

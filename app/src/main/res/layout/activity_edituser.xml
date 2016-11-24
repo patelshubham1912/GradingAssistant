@@ -22,7 +22,7 @@
         android:inputType="textPersonName"
         android:hint="Enter User Id"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/editUser_searchUser"
         android:layout_alignTop="@+id/textView2"
         android:layout_toEndOf="@+id/textView2"
         android:text="1001123" />
@@ -31,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Search"
-        android:id="@+id/button"
+        android:id="@+id/editUser_Search"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true" />
 

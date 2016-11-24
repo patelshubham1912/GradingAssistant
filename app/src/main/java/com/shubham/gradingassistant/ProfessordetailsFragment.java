@@ -10,14 +10,6 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link FirstFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link FirstFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class ProfessordetailsFragment extends Fragment {
 
     public ProfessordetailsFragment() {
@@ -30,7 +22,10 @@ public class ProfessordetailsFragment extends Fragment {
         // Inflate the layout for this fragment
 
         //Toast.makeText(this.getContext(),"Message",Toast.LENGTH_SHORT).show();
-        return inflater.inflate(R.layout.activity_professordetails, container, false);
+        View v=  inflater.inflate(R.layout.activity_professordetails, container, false);
+
+
+        return v;
 
     }
 

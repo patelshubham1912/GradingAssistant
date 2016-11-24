@@ -30,7 +30,10 @@ public class StudentdetailsFragment extends Fragment {
         // Inflate the layout for this fragment
 
         //Toast.makeText(this.getContext(),"Message",Toast.LENGTH_SHORT).show();
-        return inflater.inflate(R.layout.activity_studentdetails, container, false);
+        View v=  inflater.inflate(R.layout.activity_studentdetails, container, false);
+
+
+        return v;
 
     }
 

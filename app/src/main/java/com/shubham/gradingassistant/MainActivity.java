@@ -80,16 +80,13 @@ public class MainActivity extends AppCompatActivity
         }else
         {
             //Professor View
-            menu.setGroupCheckable(R.id.Admin, false, false);
-            menu.setGroupVisible(R.id.Admin, false);
-            menu.setGroupCheckable(R.id.Student,false,false);
-            menu.setGroupVisible(R.id.Student,false);
+            menu.setGroupCheckable(R.id.Admin, true, true);
+            menu.setGroupVisible(R.id.Admin, true);
+            menu.setGroupCheckable(R.id.Student,true,true);
+            menu.setGroupVisible(R.id.Student,true);
             menu.setGroupCheckable(R.id.Professor,true,true);
             menu.setGroupVisible(R.id.Professor,true);
         }
-
-
-
     }
 
     @Override
