@@ -20,16 +20,15 @@ import java.net.URLEncoder;
 /**
  * Created by $hubham on 13/10/2016.
  */
-public class LoginActivityBackgroundTask extends AsyncTask<String,Void,admin_view> {
-
+public class DeleteUserFragmentBackgroundTask extends AsyncTask<String,Void,String> {
     public interface AsyncResponse {
-        void processFinish(admin_view output);
+        void processFinish(String output);
     }
 
     public AsyncResponse delegate = null;
     Context ctx;
     admin_view admin_view=new admin_view();
-    public LoginActivityBackgroundTask(Context ctx,AsyncResponse delegate) {
+    public DeleteUserFragmentBackgroundTask(Context ctx,AsyncResponse delegate) {
         this.ctx=ctx;
         this.delegate=delegate;
     }
@@ -40,10 +39,10 @@ public class LoginActivityBackgroundTask extends AsyncTask<String,Void,admin_vie
     }
 
     @Override
-    protected admin_view doInBackground(String... params) {
+    protected String doInBackground(String... params) {
 
 
-        String login_url = "http://"+ctx.getString(R.string.ip_address)+"/android_connect/LoginActivity.php";
+        String login_url = "http://"+ctx.getString(R.string.ip_address)+"/android_connect/DeleteUserFragment.php";
         try {
             URL url=new URL(login_url);
             HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
@@ -52,7 +51,11 @@ public class LoginActivityBackgroundTask extends AsyncTask<String,Void,admin_vie
             httpURLConnection.setDoOutput(true);
             OutputStream OS =httpURLConnection.getOutputStream();
             BufferedWriter bufferedWriter= new BufferedWriter(new OutputStreamWriter(OS,"UTF-8"));
-            String data = URLEncoder.encode("user_id","UTF-8")+"="+URLEncoder.encode(params[0],"UTF-8")+"&"+URLEncoder.encode("password","UTF-8")+"="+URLEncoder.encode(params[1],"UTF-8");
+            String data="";
+            if(params[1].equals("select"))
+                data = URLEncoder.encode("user_id","UTF-8")+"="+URLEncoder.encode(params[0],"UTF-8")+"&"+URLEncoder.encode("query","UTF-8")+"="+URLEncoder.encode(params[1],"UTF-8");
+            else if(params[1].equals("delete"))
+                data = URLEncoder.encode("user_id","UTF-8")+"="+URLEncoder.encode(params[0],"UTF-8")+"&"+URLEncoder.encode("query","UTF-8")+"="+URLEncoder.encode(params[1],"UTF-8")+"&"+URLEncoder.encode("type","UTF-8")+"="+URLEncoder.encode(params[2],"UTF-8");
             bufferedWriter.write(data);
             bufferedWriter.flush();
             bufferedWriter.close();
@@ -71,7 +74,7 @@ public class LoginActivityBackgroundTask extends AsyncTask<String,Void,admin_vie
             bufferedReader.close();
             IS.close();
             httpURLConnection.disconnect();
-            return admin_view;
+            return response;
         }
         catch (MalformedURLException e)
         {
@@ -89,12 +92,13 @@ public class LoginActivityBackgroundTask extends AsyncTask<String,Void,admin_vie
     }
 
     @Override
-    protected void onPostExecute(admin_view result) {
-        Toast.makeText(ctx,result.getEmail_id(),Toast.LENGTH_SHORT).show();
-       //setValues(result);
-       delegate.processFinish(result);
-       // LoginActivity loginActivity=new LoginActivity();
-       // loginActivity.setReturnResult(result);
+    protected void onPostExecute(String result) {
+        //Toast.makeText(ctx,result,Toast.LENGTH_SHORT).show();
+        //setValues(result);
+        delegate.processFinish(result);
+        // LoginActivity loginActivity=new LoginActivity();
+        // loginActivity.setReturnResult(result);
     }
+
 
 }
