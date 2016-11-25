@@ -2,49 +2,60 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText6"
-        android:layout_marginTop="56dp"
-        android:hint="Course Name"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText7"
-        android:layout_marginTop="48dp"
-        android:hint="Course ID"
-        android:layout_below="@+id/editText6"
-        android:layout_centerHorizontal="true" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Create"
-        android:id="@+id/button3"
+        android:id="@+id/createcourse_create"
         android:layout_marginBottom="44dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/editText9"
-        android:layout_alignEnd="@+id/editText9" />
+        android:layout_alignStart="@+id/createcourse_pre_requisite"
+        android:layout_alignEnd="@+id/createcourse_pre_requisite" />
+
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText8"
-        android:hint="Pre-requisite 1"
+        android:id="@+id/createcourse_pre_requisite"
+        android:hint="Pre-requisite"
         android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/editText9" />
+        android:layout_centerHorizontal="true" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/createcourse_major_type"
+        android:entries="@array/majorType"
+        android:ellipsize="marquee"
+        android:layout_marginBottom="17dp"
+        android:layout_above="@+id/createcourse_pre_requisite"
+        android:layout_alignStart="@+id/createcourse_pre_requisite" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText9"
-        android:hint="Pre-requisite 2"
-        android:layout_below="@+id/editText8"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp" />
+        android:id="@+id/createcourse_course_name"
+        android:hint="Course ID"
+        android:layout_above="@+id/createcourse_specialization_type"
+        android:layout_alignStart="@+id/createcourse_specialization_type"
+        android:layout_marginBottom="29dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/createcourse_course_id"
+        android:hint="Course Name"
+        android:layout_above="@+id/createcourse_course_name"
+        android:layout_alignEnd="@+id/createcourse_pre_requisite" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/createcourse_specialization_type"
+        android:layout_marginBottom="33dp"
+        android:ellipsize="marquee"
+        android:entries = "@array/specializationType"
+        android:layout_above="@+id/createcourse_major_type"
+        android:layout_alignStart="@+id/createcourse_major_type" />
 
 </RelativeLayout>
