@@ -27,11 +27,11 @@
 
 
     <group android:checkableBehavior="single"  android:id="@+id/Student" android:visible="false">
-            <item android:id="@+id/nav_first2" android:icon="@drawable/ic_action_name"
+            <item android:id="@+id/nav_viewcourseDescription" android:icon="@drawable/ic_action_name"
                 android:title="Course Description" />
-            <item android:id="@+id/nav_second2" android:icon="@drawable/ic_action_name"
+            <item android:id="@+id/nav_viewAssignment" android:icon="@drawable/ic_action_name"
                 android:title="Assignments" />
-            <item android:id="@+id/nav_third2" android:icon="@drawable/ic_action_name"
+            <item android:id="@+id/nav_viewSlides" android:icon="@drawable/ic_action_name"
                 android:title="Slides" />
             <item android:id="@+id/nav_fifth2"  android:icon="@drawable/ic_action_name"
                 android:title="Quizzes" />
@@ -39,7 +39,7 @@
                 android:title="Projects" />
             <item android:id="@+id/nav_seventh2" android:icon="@drawable/ic_action_name"
                 android:title="Grades" />
-            <item android:id="@+id/nav_ninth2" android:icon="@drawable/ic_action_name"
+            <item android:id="@+id/nav_classActivityResult" android:icon="@drawable/ic_action_name"
                 android:title="Class Activity Result" />
         <item android:id="@+id/nav_registerForCourses" android:icon="@drawable/ic_action_name"
             android:title="Register For Courses" />
@@ -61,7 +61,7 @@
                 android:title="Update Grades" />
             <item android:id="@+id/nav_eigth3" android:icon="@drawable/ic_action_name"
                 android:title="Graphical Representation" />
-            <item android:id="@+id/nav_tenth3" android:icon="@drawable/ic_action_name"
+            <item android:id="@+id/nav_avggpa" android:icon="@drawable/ic_action_name"
                 android:title="Average Class GPA" />
             <item android:id="@+id/nav_changepassword" android:icon="@drawable/ic_action_name"
                 android:title="Change Password" />

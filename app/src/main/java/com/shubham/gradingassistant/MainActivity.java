@@ -238,6 +238,40 @@ public class MainActivity extends AppCompatActivity
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container,fragment);
             fragmentTransaction.commit();
+        }else if(id==R.id.nav_viewcourseDescription)
+        {
+            viewCourseDescriptionFragment fragment = new viewCourseDescriptionFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container,fragment);
+            fragmentTransaction.commit();
+        }
+        else if(id==R.id.nav_classActivityResult)
+        {
+            classActivityResultFragment fragment = new classActivityResultFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container,fragment);
+            fragmentTransaction.commit();
+        }
+        else if(id==R.id.nav_avggpa)
+        {
+            avggpaFragment fragment = new avggpaFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container,fragment);
+            fragmentTransaction.commit();
+        }
+        else if(id==R.id.nav_viewAssignment)
+        {
+            viewAssignmentFragment fragment = new viewAssignmentFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container,fragment);
+            fragmentTransaction.commit();
+        }
+        else if(id==R.id.nav_viewSlides)
+        {
+            viewslidesFragment fragment = new viewslidesFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container,fragment);
+            fragmentTransaction.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:id="@+id/editText45"
+        android:text="Course ID: CSE 5330" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editText46"
+        android:text="Maximum: 100          Minimum: 56          Median: 83.69          Average: 82.18"
+        android:layout_alignTop="@+id/editText47"
+        android:layout_alignStart="@+id/editText47"
+        android:layout_marginTop="30dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Test 1"
+        android:ems="10"
+        android:id="@+id/editText47"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/editText45"
+        android:layout_alignStart="@+id/editText45" />
+</RelativeLayout>
