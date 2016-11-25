@@ -32,7 +32,6 @@ public class LoginActivity extends Activity{
         login_button = (Button)findViewById(R.id.button_login);
         user_id=(EditText)findViewById(R.id.user_id);
         password=(EditText)findViewById(R.id.password);
-        Log.d("Username","checkin");
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
 
