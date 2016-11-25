@@ -41,6 +41,8 @@
                 android:title="Grades" />
             <item android:id="@+id/nav_ninth2" android:icon="@drawable/ic_action_name"
                 android:title="Class Activity Result" />
+        <item android:id="@+id/nav_registerForCourses" android:icon="@drawable/ic_action_name"
+            android:title="Register For Courses" />
         </group>
 
 

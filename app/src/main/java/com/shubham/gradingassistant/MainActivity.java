@@ -229,6 +229,13 @@ public class MainActivity extends AppCompatActivity
             // Second Fragment
             SendqueryFragment fragment = new SendqueryFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
+
+        }else if (id == R.id.nav_registerForCourses) {
+            // Second Fragment
+            RegistercourseFragment fragment = new RegistercourseFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container,fragment);
             fragmentTransaction.commit();
         }
