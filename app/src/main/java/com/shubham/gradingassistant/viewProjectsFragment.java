@@ -11,13 +11,13 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.shubham.DAO.viewslidesFragmentBackgroundTask;
+import com.shubham.DAO.viewProjectsFragmentBackgroundTask;
 
 
-public class viewslidesFragment extends Fragment {
+public class viewProjectsFragment extends Fragment {
     RelativeLayout relativeLayout;
     String s[];
-    public viewslidesFragment() {
+    public viewProjectsFragment() {
         // Required empty public constructor
     }
 
@@ -27,15 +27,15 @@ public class viewslidesFragment extends Fragment {
         // Inflate the layout for this fragment
 
 
-        final View v=  inflater.inflate(R.layout.activity_viewslides, container, false);
+        final View v=  inflater.inflate(R.layout.activity_viewprojects, container, false);
         //   relativeLayout=(RelativeLayout)v.findViewById(R.id.viewAssignment_RelativeLayout);
 
         final String courseId="C001";
 
-        viewslidesFragmentBackgroundTask backgroundTask = new viewslidesFragmentBackgroundTask(getContext(), new viewslidesFragmentBackgroundTask.AsyncResponse() {
+        viewProjectsFragmentBackgroundTask backgroundTask = new viewProjectsFragmentBackgroundTask(getContext(), new viewProjectsFragmentBackgroundTask.AsyncResponse() {
             @Override
             public void processFinish(String output) {
-                relativeLayout=(RelativeLayout)v.findViewById(R.id.viewSlides_RelativeLayout);
+                relativeLayout=(RelativeLayout)v.findViewById(R.id.viewProjects_RelativeLayout);
                 int temp=0;
                 s=output.split("#");
                 try {

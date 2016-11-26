@@ -13,7 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="55dp"
-        android:id="@+id/viewSlides_courseId" />
+        android:id="@+id/viewProjects_courseId" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -21,23 +21,23 @@
         android:inputType="textPersonName"
         android:textStyle="bold"
         android:textSize="40px"
-        android:text="Slides:"
+        android:text="Projects:"
         android:ems="10"
         android:layout_marginTop="22dp"
-        android:id="@+id/viewSlides_editText27"
-        android:layout_below="@+id/viewSlides_courseId"
-        android:layout_alignStart="@+id/viewSlides_courseId" />
+        android:id="@+id/viewProjects_editText27"
+        android:layout_below="@+id/viewProjects_courseId"
+        android:layout_alignStart="@+id/viewProjects_courseId" />
 
 
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/viewSlides_editText27"
+        android:layout_below="@+id/viewProjects_editText27"
         android:layout_marginTop="14dp"
-        android:id="@+id/viewSlides_RelativeLayout"
-        android:layout_alignStart="@+id/viewSlides_editText27"
-        android:layout_alignEnd="@+id/viewSlides_editText27" />
+        android:id="@+id/viewProjects_RelativeLayout"
+        android:layout_alignStart="@+id/viewProjects_editText27"
+        android:layout_alignEnd="@+id/viewProjects_editText27" />
 
 
 </RelativeLayout>

@@ -11,7 +11,7 @@
     <string name="Second">Second</string>
     <string name="First">First</string>
 
-    <string name="ip_address">192.168.1.23</string>
+    <string name="ip_address">192.168.1.68</string>
 
     <string-array name="courseList1">
         <item>DBMS</item>
@@ -45,7 +45,6 @@
     <string-array name="userType">
         <item>Select User Type</item>
         <item>student</item>
-
         <item>professor</item>
     </string-array>
 </resources>

@@ -20,7 +20,7 @@ import java.net.URLEncoder;
 /**
  * Created by $hubham on 13/10/2016.
  */
-public class viewslidesFragmentBackgroundTask extends AsyncTask<String,Void,String> {
+public class viewQuizzesFragmentBackgroundTask extends AsyncTask<String,Void,String> {
     public interface AsyncResponse {
         void processFinish(String output);
     }
@@ -28,7 +28,7 @@ public class viewslidesFragmentBackgroundTask extends AsyncTask<String,Void,Stri
     public AsyncResponse delegate = null;
     Context ctx;
     admin_view admin_view=new admin_view();
-    public viewslidesFragmentBackgroundTask(Context ctx,AsyncResponse delegate) {
+    public viewQuizzesFragmentBackgroundTask(Context ctx,AsyncResponse delegate) {
         this.ctx=ctx;
         this.delegate=delegate;
     }
@@ -42,7 +42,7 @@ public class viewslidesFragmentBackgroundTask extends AsyncTask<String,Void,Stri
     protected String doInBackground(String... params) {
 
 
-        String login_url = "http://"+ctx.getString(R.string.ip_address)+"/android_connect/viewSlidesFragment.php";
+        String login_url = "http://"+ctx.getString(R.string.ip_address)+"/android_connect/viewQuizzesFragment.php";
         try {
             URL url=new URL(login_url);
             HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
