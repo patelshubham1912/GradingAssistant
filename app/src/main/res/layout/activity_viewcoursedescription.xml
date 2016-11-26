@@ -6,30 +6,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
+        android:textStyle="bold"
+        android:textSize="40px"
         android:text="Course ID: CSE 5330"
         android:ems="10"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="55dp"
-        android:id="@+id/editText23" />
+        android:id="@+id/viewCourseDescription_courseId" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
+        android:textStyle="bold"
+        android:textSize="40px"
         android:text="Course Description:"
         android:ems="10"
-        android:layout_marginTop="63dp"
+        android:layout_marginTop="40px"
         android:id="@+id/editText24"
-        android:layout_below="@+id/editText23"
-        android:layout_alignStart="@+id/editText23" />
+        android:layout_below="@+id/viewCourseDescription_courseId"
+        android:layout_alignStart="@+id/viewCourseDescription_courseId" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@+id/editText26"
+        android:id="@+id/viewCourseDescription_courseDescription"
+        android:layout_marginTop="20px"
         android:text="Class : Tuesday, Thursday 7:00 PM ~ 8:20 PM Classroom : #210 WH Instructor : Dr. Kyungseo Park E-Mail : kyungseo.park@uta.edu "
         android:layout_below="@+id/editText24"
         android:layout_alignStart="@+id/editText24" />

@@ -2,53 +2,42 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
+        android:textStyle="bold"
+        android:textSize="40px"
         android:text="Course ID: CSE 5330"
         android:ems="10"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="55dp"
-        android:id="@+id/editText25" />
+        android:id="@+id/viewAssignment_courseId" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
+        android:textStyle="bold"
+        android:textSize="40px"
         android:text="Assignments:"
         android:ems="10"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="22dp"
         android:id="@+id/editText27"
-        android:layout_below="@+id/editText25"
-        android:layout_alignStart="@+id/editText25" />
+        android:layout_below="@+id/viewAssignment_courseId"
+        android:layout_alignStart="@+id/viewAssignment_courseId" />
 
-    <Button
-        android:text="Assignment 1"
+
+
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editText27"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp"
-        android:id="@+id/button7" />
+        android:id="@+id/viewAssignment_RelativeLayout"
+        android:layout_alignStart="@+id/editText27"
+        android:layout_alignEnd="@+id/editText27" />
 
-    <Button
-        android:text="Assignment 2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button8"
-        android:layout_alignTop="@+id/button7"
-        android:layout_alignStart="@+id/button7"
-        android:layout_marginTop="37dp" />
-
-    <Button
-        android:text="Assignment 3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button9"
-        android:layout_below="@+id/button7"
-        android:layout_alignStart="@+id/button8"
-        android:layout_marginTop="24dp" />
 
 </RelativeLayout>
