@@ -22,8 +22,9 @@ public class LoginActivity extends Activity{
     Button login_button;
     EditText user_id;
     EditText password;
-    String user;
+    String s[];
     admin_view admin_view=new admin_view();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,12 +44,29 @@ public class LoginActivity extends Activity{
 
                 LoginActivityBackgroundTask backgroundTask=new LoginActivityBackgroundTask(ctx, new LoginActivityBackgroundTask.AsyncResponse() {
                     @Override
-                    public void processFinish(admin_view output) {
+                    public void processFinish(String output) {
 
-                        admin_view=output;
-                        Toast.makeText(getBaseContext(),admin_view.getEmail_id(),Toast.LENGTH_SHORT).show();
+                        s=output.split("#");
+                        admin_view.setUser_id(s[0]);
+                        admin_view.setUser_type(s[1]);
+                        admin_view.setUser_name(s[2]);
+                        admin_view.setEmail_id(s[3]);
+                        admin_view.setPassword(s[4]);
+
+                        if(admin_view.getEmail_id().equals("Student"))
+                        {
+
+                        }else if(admin_view.getEmail_id().equals("Professor"))
+                        {
+
+                        }else if(admin_view.getEmail_id().equals("Admin"))
+                        {
+
+                        }
+
+                        Toast.makeText(getBaseContext(),output,Toast.LENGTH_SHORT).show();
                         Intent intent=new Intent(getBaseContext() ,MainActivity.class);
-                        intent.putExtra("admin_view", output);
+                        intent.putExtra("admin_view", admin_view);
                         startActivity(intent);
                         //Toast.makeText(getBaseContext(),admin_view,Toast.LENGTH_SHORT).show();
                     }

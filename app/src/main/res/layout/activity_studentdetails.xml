@@ -1,82 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name: Srishti Nair"
+        android:hint="Student ID"
         android:ems="10"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="71dp"
-        android:id="@+id/editText7" />
+        android:id="@+id/Studentdetail_StudentID" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Student ID: 1001436642"
+        android:hint="Name"
         android:ems="10"
         android:layout_marginTop="22dp"
-        android:id="@+id/editText8"
-        android:layout_below="@+id/editText7"
-        android:layout_alignStart="@+id/editText7" />
+        android:id="@+id/Studentdetail_Name"
+        android:layout_below="@+id/Studentdetail_StudentID"
+        android:layout_alignStart="@+id/Studentdetail_StudentID" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Email ID: srishti@gmail.com"
+        android:hint="Email ID"
         android:ems="10"
         android:layout_marginTop="27dp"
-        android:id="@+id/editText10"
-        android:layout_below="@+id/editText8"
-        android:layout_alignStart="@+id/editText8" />
+        android:id="@+id/Studentdetail_Email"
+        android:layout_below="@+id/Studentdetail_Name"
+        android:layout_alignStart="@+id/Studentdetail_Name" />
 
-    <EditText
+        <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
+        android:inputType="textPersonName"
+        android:hint="Course 2"
         android:ems="10"
-        android:layout_below="@+id/editText12"
-        android:layout_alignEnd="@+id/editText12"
-        android:layout_marginTop="10dp"
-        android:id="@+id/editText13"
-        android:text="CSE 5330" />
+        android:layout_below="@+id/Studentdetail_Course1"
+        android:layout_alignStart="@+id/Studentdetail_Course1"
+        android:id="@+id/Studentdetail_Course2" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="CSE 5331"
+        android:hint="Course 3"
         android:ems="10"
-        android:layout_below="@+id/editText13"
-        android:layout_alignStart="@+id/editText13"
-        android:id="@+id/editText14" />
+        android:id="@+id/Studentdetail_Course3"
+        android:layout_below="@+id/Studentdetail_Course2"
+        android:layout_alignStart="@+id/Studentdetail_Course2" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="CSE 5100"
-        android:ems="10"
-        android:id="@+id/editText15"
-        android:layout_below="@+id/editText14"
-        android:layout_alignStart="@+id/editText14" />
+        <Button
+            android:text="Search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="52dp"
+            android:layout_marginTop="68dp"
+            android:id="@+id/Studentdetail_button" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@+id/editText12"
-        android:text="Courses:"
-        android:layout_marginTop="14dp"
-        android:layout_below="@+id/editText10"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="27dp" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:layout_marginTop="14dp"
+            android:id="@+id/Studentdetail_Course1"
+            android:hint="Course 1"
+            android:layout_below="@+id/Studentdetail_Coursesinfo"
+            android:layout_alignStart="@+id/Studentdetail_Coursesinfo" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:textStyle="bold"
+            android:textSize="35px"
+            android:id="@+id/Studentdetail_Coursesinfo"
+            android:hint="Courses Registered are:"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/Studentdetail_Email"
+            android:layout_alignStart="@+id/Studentdetail_Email" />
 
+    </RelativeLayout>
+
+</ScrollView>
 </RelativeLayout>

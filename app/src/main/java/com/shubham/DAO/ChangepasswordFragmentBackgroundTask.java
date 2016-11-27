@@ -20,15 +20,15 @@ import java.net.URLEncoder;
 /**
  * Created by $hubham on 13/10/2016.
  */
-public class LoginActivityBackgroundTask extends AsyncTask<String,Void,String> {
-
+public class ChangepasswordFragmentBackgroundTask extends AsyncTask<String,Void,String> {
     public interface AsyncResponse {
         void processFinish(String output);
     }
 
     public AsyncResponse delegate = null;
     Context ctx;
-    public LoginActivityBackgroundTask(Context ctx,AsyncResponse delegate) {
+    admin_view admin_view=new admin_view();
+    public ChangepasswordFragmentBackgroundTask(Context ctx,AsyncResponse delegate) {
         this.ctx=ctx;
         this.delegate=delegate;
     }
@@ -42,7 +42,7 @@ public class LoginActivityBackgroundTask extends AsyncTask<String,Void,String> {
     protected String doInBackground(String... params) {
 
 
-        String login_url = "http://"+ctx.getString(R.string.ip_address)+"/android_connect/LoginActivity.php";
+        String login_url = "http://"+ctx.getString(R.string.ip_address)+"/android_connect/ChangePasswordFragment.php";
         try {
             URL url=new URL(login_url);
             HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
@@ -66,7 +66,7 @@ public class LoginActivityBackgroundTask extends AsyncTask<String,Void,String> {
 
                 response+=line;
             }
-
+            admin_view.setEmail_id(response);
             bufferedReader.close();
             IS.close();
             httpURLConnection.disconnect();
@@ -89,11 +89,12 @@ public class LoginActivityBackgroundTask extends AsyncTask<String,Void,String> {
 
     @Override
     protected void onPostExecute(String result) {
-       // Toast.makeText(ctx,result,Toast.LENGTH_SHORT).show();
-       //setValues(result);
-       delegate.processFinish(result);
-       // LoginActivity loginActivity=new LoginActivity();
-       // loginActivity.setReturnResult(result);
+      //  Toast.makeText(ctx,result.getEmail_id(),Toast.LENGTH_SHORT).show();
+        //setValues(result);
+        delegate.processFinish(result);
+        // LoginActivity loginActivity=new LoginActivity();
+        // loginActivity.setReturnResult(result);
     }
+
 
 }

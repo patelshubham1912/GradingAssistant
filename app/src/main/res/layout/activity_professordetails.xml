@@ -6,33 +6,87 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name: Atharv Kashyap"
+        android:hint="Course1"
         android:ems="10"
-        android:layout_marginTop="111dp"
-        android:id="@+id/editText"
+        android:layout_below="@+id/Professordetails_Coursestaughtare"
+        android:layout_alignStart="@+id/Professordetails_Coursestaughtare"
+        android:layout_marginTop="12dp"
+        android:id="@+id/Professordetails_course1" />
+
+    <Button
+        android:text="search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Professordetails_ProfessorID"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="17dp"
+        android:id="@+id/Professordetails_search" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Courses Taught are:"
+        android:textStyle="bold"
+        android:textSize="35px"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:layout_below="@+id/Professordetails_emailID"
+        android:layout_alignStart="@+id/Professordetails_ProfessorID"
+        android:id="@+id/Professordetails_Coursestaughtare" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Professor_ID"
+        android:ems="10"
+        android:layout_marginTop="30dp"
+        android:id="@+id/Professordetails_ProfessorID"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="73dp" />
+        android:layout_alignStart="@+id/Professordetails_name" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Email ID: atharv@gmail.com"
+        android:hint="Name"
         android:ems="10"
-        android:layout_below="@+id/editText"
-        android:layout_alignStart="@+id/editText"
-        android:layout_marginTop="48dp"
-        android:id="@+id/editText2" />
+        android:layout_marginTop="12dp"
+        android:id="@+id/Professordetails_name"
+        android:layout_below="@+id/Professordetails_ProfessorID"
+        android:layout_toStartOf="@+id/Professordetails_search" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Courses: CSE 5330"
+        android:hint="Email ID"
         android:ems="10"
-        android:layout_below="@+id/editText2"
-        android:layout_alignStart="@+id/editText2"
-        android:layout_marginTop="41dp"
-        android:id="@+id/editText6" />
+        android:layout_marginTop="12dp"
+        android:id="@+id/Professordetails_emailID"
+        android:layout_below="@+id/Professordetails_name"
+        android:layout_alignStart="@+id/Professordetails_Coursestaughtare" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Course2"
+        android:ems="10"
+        android:layout_marginTop="12dp"
+        android:id="@+id/Professordetails_course2"
+        android:layout_below="@+id/Professordetails_course1"
+        android:layout_alignStart="@+id/Professordetails_course1" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Course3"
+        android:ems="10"
+        android:layout_marginTop="12dp"
+        android:id="@+id/Professordetails_course3"
+        android:layout_below="@+id/Professordetails_course2"
+        android:layout_alignStart="@+id/Professordetails_course2" />
 </RelativeLayout>

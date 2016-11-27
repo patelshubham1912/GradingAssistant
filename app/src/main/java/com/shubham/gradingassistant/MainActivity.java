@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity
         admin_view=(admin_view)i.getSerializableExtra("admin_view");
         Toast.makeText(getBaseContext(),admin_view.getEmail_id(),Toast.LENGTH_SHORT).show();
 
-        if(admin_view.getEmail_id().equals("abc"))
+        if(admin_view.getEmail_id().equals("pqr"))
         {
             //Admin View
             menu.setGroupCheckable(R.id.Admin, true, true);

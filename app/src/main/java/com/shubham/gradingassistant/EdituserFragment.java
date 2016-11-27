@@ -1,67 +1,80 @@
 package com.shubham.gradingassistant;
 
 import android.app.Activity;
-import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.shubham.Beans.admin_view;
-import com.shubham.DAO.LoginActivityBackgroundTask;
-
+import com.shubham.DAO.classActivityResultFragmentBackgroundTask;
 
 
 public class EdituserFragment extends Fragment {
+    RelativeLayout relativeLayout;
+    String s[];
 
-    EditText edittext;
-    Button button1;
-    admin_view admin_view;
     public EdituserFragment() {
         // Required empty public constructor
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        //Toast.makeText(getActivity().getBaseContext(),edittext.getText().toString(),Toast.LENGTH_SHORT).show();
-        //Toast.makeText(getActivity().getBaseContext(),"Welcome",Toast.LENGTH_SHORT).show();
 
-        View v = inflater.inflate(R.layout.activity_edituser, container, false);
-        edittext=(EditText)v.findViewById(R.id.editUser_searchUser);
-        button1 = (Button) v.findViewById(R.id.editUser_Search);
-        button1.setOnClickListener(new View.OnClickListener() {
+
+        final View v=  inflater.inflate(R.layout.activity_viewclassactivityresult, container, false);
+
+        final String courseId="C001";
+
+        classActivityResultFragmentBackgroundTask backgroundTask = new classActivityResultFragmentBackgroundTask(getContext(), new classActivityResultFragmentBackgroundTask.AsyncResponse() {
             @Override
-            public void onClick(View v) {
-                LoginActivityBackgroundTask backgroundTask=new LoginActivityBackgroundTask(getContext(), new LoginActivityBackgroundTask.AsyncResponse() {
-                    @Override
-                    public void processFinish(admin_view output) {
+            public void processFinish(String output) {
+                relativeLayout=(RelativeLayout)v.findViewById(R.id.viewClassActivityResult_RelativeLayout);
+                int temp=0;
+                s=output.split("#");
+                try {
+                    temp = Integer.parseInt(s[0].replaceAll("[\\D]", ""));
+                    temp--;
+                }
+                catch (NumberFormatException e){}
 
-                        admin_view=output;
-                        Toast.makeText(getContext(),admin_view.getEmail_id(),Toast.LENGTH_SHORT).show();
-                        
-                       // Intent intent=new Intent(getBaseContext() ,MainActivity.class);
-                       // intent.putExtra("admin_view", output);
-                       // startActivity(intent);
-                        //Toast.makeText(getBaseContext(),admin_view,Toast.LENGTH_SHORT).show();
-                    }
-                });
-                backgroundTask.execute("abc","abc");
-                //Toast.makeText(getContext(),edittext.getText().toString(),Toast.LENGTH_SHORT).show();
+                for(int i=0;i<=temp;i++)
+                {
+                    String s1[]=s[i+1].toString().split("\\$");
+                    TextView title=new TextView(v.getContext());
+                    title.setText(s1[0]);
+                    title.setId(v.generateViewId());
+                    title.setTypeface(null, Typeface.BOLD);
+                    title.setTextSize(TypedValue.COMPLEX_UNIT_PX,40);
+                    RelativeLayout.LayoutParams titleparams=new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+                    titleparams.setMargins(20,i*300,20,0);
+                    relativeLayout.addView(title,titleparams);
+
+                    TextView textView=new TextView(v.getContext());
+                    textView.setText("Mean: "+s1[1]+"\nMedian: "+s1[2]+"\nStandard Deviation: "+s1[3]+"\nHighest Score: "+s1[4]+"\nLowest Score: "+s1[5]);
+                    textView.setSingleLine(false);
+                    textView.setId(v.generateViewId());
+                    RelativeLayout.LayoutParams textViewparams=new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+                    textViewparams.setMargins(20,i*300+50,20,0);
+                    relativeLayout.addView(textView,textViewparams);
+                }
+                //courseDescription.setText(output);
+                Toast.makeText(getContext(),output+"",Toast.LENGTH_SHORT).show();
             }
         });
-    //    Toast.makeText(getContext(),edittext.getText().toString(),Toast.LENGTH_SHORT).show();
+        backgroundTask.execute(courseId);
 
         return v;
+
     }
 
 }
