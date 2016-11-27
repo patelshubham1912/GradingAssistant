@@ -37,7 +37,7 @@
                 android:title="Quizzes" />
             <item android:id="@+id/nav_viewProjects" android:icon="@drawable/ic_action_name"
                 android:title="Projects" />
-            <item android:id="@+id/nav_seventh2" android:icon="@drawable/ic_action_name"
+            <item android:id="@+id/nav_viewgrades" android:icon="@drawable/ic_action_name"
                 android:title="Grades" />
             <item android:id="@+id/nav_classActivityResult" android:icon="@drawable/ic_action_name"
                 android:title="Class Activity Result" />

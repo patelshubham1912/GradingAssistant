@@ -1,37 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <EditText
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
+        android:textStyle="bold"
+        android:textSize="40px"
+        android:text="Course ID: CSE 5330"
         android:ems="10"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp"
-        android:id="@+id/editText45"
-        android:text="Course ID: CSE 5330" />
+        android:layout_marginTop="55dp"
+        android:id="@+id/viewClassActivityResult_courseId" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@+id/editText46"
-        android:text="Maximum: 100          Minimum: 56          Median: 83.69          Average: 82.18"
-        android:layout_alignTop="@+id/editText47"
-        android:layout_alignStart="@+id/editText47"
-        android:layout_marginTop="30dp" />
-
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Test 1"
+        android:textStyle="bold"
+        android:textSize="40px"
+        android:text="Slides:"
         android:ems="10"
-        android:id="@+id/editText47"
-        android:layout_marginTop="18dp"
-        android:layout_below="@+id/editText45"
-        android:layout_alignStart="@+id/editText45" />
+        android:layout_marginTop="22dp"
+        android:id="@+id/viewClassActivityResult_editText27"
+        android:layout_below="@+id/viewClassActivityResult_courseId"
+        android:layout_alignStart="@+id/viewClassActivityResult_courseId" />
+
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewClassActivityResult_editText27"
+        android:layout_marginTop="14dp"
+        android:id="@+id/viewClassActivityResult_RelativeLayout"
+        android:layout_alignStart="@+id/viewClassActivityResult_editText27"
+        android:layout_alignEnd="@+id/viewClassActivityResult_editText27" />
+
+
+    </RelativeLayout>
+</ScrollView>
 </RelativeLayout>

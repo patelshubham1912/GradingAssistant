@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:textStyle="bold"
+        android:textSize="40px"
+        android:text="Student ID: 1001416698"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="39dp"
+        android:id="@+id/viewgrades_studId" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:textStyle="bold"
+        android:textSize="40px"
+        android:text="Course ID: CSE 5330"
+        android:ems="10"
+        android:layout_marginTop="12dp"
+        android:id="@+id/viewgrades_courseId"
+        android:layout_below="@+id/viewgrades_studId"
+        android:layout_alignStart="@+id/viewgrades_studId" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:textStyle="bold"
+        android:textSize="40px"
+        android:text="Grades:"
+        android:layout_marginTop="40px"
+        android:ems="10"
+        android:layout_below="@+id/viewgrades_courseId"
+        android:layout_alignStart="@+id/viewgrades_courseId"
+        android:id="@+id/viewgrades_grades" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="40px"
+        android:layout_marginTop="20px"
+        android:ems="10"
+        android:layout_below="@+id/viewgrades_grades"
+        android:layout_alignStart="@+id/viewgrades_grades"
+        android:id="@+id/viewgrades_Assignment"
+        android:text="Assignment : TBD" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="40px"
+            android:ems="10"
+            android:layout_below="@+id/viewgrades_Assignment"
+            android:layout_alignStart="@+id/viewgrades_Assignment"
+            android:id="@+id/viewgrades_Quiz"
+            android:text="Quiz : TBD" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="40px"
+            android:ems="10"
+            android:layout_below="@+id/viewgrades_Quiz"
+            android:layout_alignStart="@+id/viewgrades_Quiz"
+            android:id="@+id/viewgrades_Project"
+            android:text="Project : TBD" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="40px"
+            android:ems="10"
+            android:layout_below="@+id/viewgrades_Project"
+            android:layout_alignStart="@+id/viewgrades_Project"
+            android:id="@+id/viewgrades_Midterm"
+            android:text="Midterm : TBD" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="40px"
+            android:ems="10"
+            android:layout_below="@+id/viewgrades_Midterm"
+            android:layout_alignStart="@+id/viewgrades_Midterm"
+            android:id="@+id/viewgrades_Final"
+            android:text="Final : TBD" />
+
+</RelativeLayout>
+</ScrollView>
+
+</RelativeLayout>

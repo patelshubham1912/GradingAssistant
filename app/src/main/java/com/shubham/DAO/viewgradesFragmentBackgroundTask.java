@@ -20,7 +20,7 @@ import java.net.URLEncoder;
 /**
  * Created by $hubham on 13/10/2016.
  */
-public class classActivityResultFragmentBackgroundTask extends AsyncTask<String,Void,String> {
+public class viewgradesFragmentBackgroundTask extends AsyncTask<String,Void,String> {
     public interface AsyncResponse {
         void processFinish(String output);
     }
@@ -28,7 +28,7 @@ public class classActivityResultFragmentBackgroundTask extends AsyncTask<String,
     public AsyncResponse delegate = null;
     Context ctx;
     admin_view admin_view=new admin_view();
-    public classActivityResultFragmentBackgroundTask(Context ctx,AsyncResponse delegate) {
+    public viewgradesFragmentBackgroundTask(Context ctx,AsyncResponse delegate) {
         this.ctx=ctx;
         this.delegate=delegate;
     }
@@ -42,7 +42,7 @@ public class classActivityResultFragmentBackgroundTask extends AsyncTask<String,
     protected String doInBackground(String... params) {
 
 
-        String login_url = "http://"+ctx.getString(R.string.ip_address)+"/android_connect/classActivityResultFragment.php";
+        String login_url = "http://"+ctx.getString(R.string.ip_address)+"/android_connect/viewgradesFragment.php";
         try {
             URL url=new URL(login_url);
             HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
@@ -51,7 +51,7 @@ public class classActivityResultFragmentBackgroundTask extends AsyncTask<String,
             httpURLConnection.setDoOutput(true);
             OutputStream OS =httpURLConnection.getOutputStream();
             BufferedWriter bufferedWriter= new BufferedWriter(new OutputStreamWriter(OS,"UTF-8"));
-            String data = URLEncoder.encode("course_id","UTF-8")+"="+URLEncoder.encode(params[0],"UTF-8");
+            String data = URLEncoder.encode("student_id","UTF-8")+"="+URLEncoder.encode(params[0],"UTF-8")+"&"+URLEncoder.encode("course_id","UTF-8")+"="+URLEncoder.encode(params[1],"UTF-8");
             bufferedWriter.write(data);
             bufferedWriter.flush();
             bufferedWriter.close();
