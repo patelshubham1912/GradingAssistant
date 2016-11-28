@@ -14,7 +14,7 @@
             android:title="Edit Course" />
         <item android:id="@+id/nav_linkcourseandprofessor" android:icon="@drawable/ic_action_name"
             android:title="Link Course and Professor" />
-        <item android:id="@+id/nav_eigth1" android:icon="@drawable/ic_action_name"
+        <item android:id="@+id/nav_admin_sendNotifications" android:icon="@drawable/ic_action_name"
             android:title="Send Notifications" />
         <item android:id="@+id/nav_viewcourse" android:icon="@drawable/ic_action_name"
             android:title="View Course" />
@@ -22,6 +22,8 @@
             android:title="View Professor Details" />
         <item android:id="@+id/nav_studentdetails" android:icon="@drawable/ic_action_name"
             android:title="View Student Details" />
+        <item android:id="@+id/nav_admin_logout" android:icon="@drawable/ic_action_name"
+            android:title="Logout" />
 
     </group>
 
@@ -39,10 +41,14 @@
                 android:title="Projects" />
             <item android:id="@+id/nav_viewgrades" android:icon="@drawable/ic_action_name"
                 android:title="Grades" />
+        <item android:id="@+id/nav_student_sendNotifications" android:icon="@drawable/ic_action_name"
+            android:title="Send Notifications" />
             <item android:id="@+id/nav_classActivityResult" android:icon="@drawable/ic_action_name"
                 android:title="Class Activity Result" />
         <item android:id="@+id/nav_registerForCourses" android:icon="@drawable/ic_action_name"
             android:title="Register For Courses" />
+        <item android:id="@+id/nav_student_logout" android:icon="@drawable/ic_action_name"
+            android:title="Logout" />
         </group>
 
 
@@ -65,8 +71,10 @@
                 android:title="Average Class GPA" />
             <item android:id="@+id/nav_changepassword" android:icon="@drawable/ic_action_name"
                 android:title="Change Password" />
-            <item android:id="@+id/nav_sendquery" android:icon="@drawable/ic_action_name"
-            android:title="Send Query" />
+            <item android:id="@+id/nav_professor_sendNotifications" android:icon="@drawable/ic_action_name"
+                android:title="Send Notifications" />
+            <item android:id="@+id/nav_professor_logout" android:icon="@drawable/ic_action_name"
+                android:title="Logout" />
 
         </group>
 

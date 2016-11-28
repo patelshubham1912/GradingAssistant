@@ -225,14 +225,7 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.fragment_container,fragment);
             fragmentTransaction.commit();
         }
-        else if (id == R.id.nav_sendquery) {
-            // Second Fragment
-            SendqueryFragment fragment = new SendqueryFragment();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container, fragment);
-            fragmentTransaction.commit();
-
-        }else if (id == R.id.nav_registerForCourses) {
+        else if (id == R.id.nav_registerForCourses) {
             // Second Fragment
             RegistercourseFragment fragment = new RegistercourseFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -294,6 +287,19 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.fragment_container,fragment);
             fragmentTransaction.commit();
         }
+        else if(id==R.id.nav_admin_sendNotifications || id==R.id.nav_student_sendNotifications || id==R.id.nav_professor_sendNotifications)
+        {
+            sendNotificationFragment fragment = new sendNotificationFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container,fragment);
+            fragmentTransaction.commit();
+        }
+        else if(id==R.id.nav_admin_logout || id==R.id.nav_student_logout || id==R.id.nav_professor_logout)
+        {
+            Intent intent=new Intent(this,LoginActivity.class);
+            startActivity(intent);
+        }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
