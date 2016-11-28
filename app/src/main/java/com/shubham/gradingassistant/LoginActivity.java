@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
+
+
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -65,10 +67,11 @@ public class LoginActivity extends Activity{
                         }
 
                         Toast.makeText(getBaseContext(),output,Toast.LENGTH_SHORT).show();
+
                         Intent intent=new Intent(getBaseContext() ,MainActivity.class);
                         intent.putExtra("admin_view", admin_view);
                         startActivity(intent);
-                        //Toast.makeText(getBaseContext(),admin_view,Toast.LENGTH_SHORT).show();
+
                     }
                 });
                 backgroundTask.execute(u,p);

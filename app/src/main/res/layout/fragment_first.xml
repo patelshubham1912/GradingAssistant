@@ -115,13 +115,13 @@
         android:id="@+id/relativeLayout2">
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16dp"
             android:background="#FFFFFF"
             android:textColor="#000000"
             android:text="Notifications\n(0)"
-            android:id="@+id/textView5"
+            android:id="@+id/fragment_first_notifications"
             android:gravity="center"
             android:layout_alignParentBottom="true"
             android:layout_alignParentTop="true"
@@ -140,7 +140,7 @@
         android:layout_toEndOf="@+id/relativeLayout2">
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16dp"
             android:background="#FFFFFF"
