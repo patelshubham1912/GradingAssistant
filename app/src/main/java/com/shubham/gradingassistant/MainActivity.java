@@ -299,6 +299,13 @@ public class MainActivity extends AppCompatActivity
             Intent intent=new Intent(this,LoginActivity.class);
             startActivity(intent);
         }
+        else if(id==R.id.nav_registerForDegreePlan)
+        {
+            RegisterForDegreePlanFragment fragment = new RegisterForDegreePlanFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container,fragment);
+            fragmentTransaction.commit();
+        }
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

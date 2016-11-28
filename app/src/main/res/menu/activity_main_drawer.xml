@@ -47,6 +47,8 @@
                 android:title="Class Activity Result" />
         <item android:id="@+id/nav_registerForCourses" android:icon="@drawable/ic_action_name"
             android:title="Register For Courses" />
+        <item android:id="@+id/nav_registerForDegreePlan" android:icon="@drawable/ic_action_name"
+            android:title="Register For Degree Plan" />
         <item android:id="@+id/nav_student_logout" android:icon="@drawable/ic_action_name"
             android:title="Logout" />
         </group>
