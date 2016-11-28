@@ -6,15 +6,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.neha_shet.seprojectlayouts.MainActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/textView2"
-        android:layout_marginBottom="29dp" />
+    android:paddingTop="@dimen/activity_vertical_margin">
 
     <EditText
         android:layout_width="wrap_content"
@@ -23,9 +15,7 @@
         android:hint="Enter User Id"
         android:ems="10"
         android:id="@+id/editUser_searchUser"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2"
-        android:text="1001123" />
+        />
 
     <Button
         android:layout_width="wrap_content"
@@ -38,82 +28,79 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_toEndOf="@+id/textView2"
         android:id="@+id/details"
-        android:layout_below="@+id/textView2"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/editUser_Search"
         android:layout_alignParentStart="true">
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="atharva"
-            android:ems="10"
-            android:id="@+id/editText2"
-            android:layout_marginTop="58dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="atharva@uta.in"
-            android:ems="10"
-            android:id="@+id/editText3"
-            android:layout_below="@+id/editText2"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="32dp" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="database"
-            android:ems="10"
-            android:id="@+id/editText4"
-            android:layout_centerVertical="true"
-            android:layout_alignStart="@+id/editText3" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/editText5"
-            android:layout_below="@+id/editText4"
-            android:layout_alignStart="@+id/editText4"
-            android:layout_marginTop="28dp"
-            android:text="CSE" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Update "
-            android:id="@+id/button2"
-            android:layout_below="@+id/editText5"
-            android:layout_alignStart="@+id/editText5"
-            android:layout_marginTop="28dp"/>
+            android:text="Update"
+            android:id="@+id/edit_user"
+            android:layout_marginEnd="29dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="106dp" />
+
+
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cancel"
-            android:id="@+id/button3"
-            android:layout_below="@+id/editText5"
-            android:layout_alignEnd="@+id/editText5"
-            android:layout_marginTop="28dp"/>
+            android:id="@+id/edituser_cancel"
+            android:layout_alignBaseline="@+id/button2"
+            android:layout_alignBottom="@+id/button2"
+            android:layout_alignStart="@+id/textView"
+            android:layout_marginStart="29dp" />
 
-        <TextView
+
+        <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Student Details "
-            android:id="@+id/textView"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true" />
-    </RelativeLayout>
+            android:inputType="textPersonName"
+            android:hint="user name"
+            android:ems="10"
+            android:id="@+id/edituser_username"
+            android:layout_above="@+id/edit_user"
+            android:layout_alignStart="@+id/edituser_email"
+            android:layout_marginBottom="47dp" />
 
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="email id"
+            android:ems="10"
+            android:id="@+id/edituser_email"
+            android:layout_above="@+id/edituser_username"
+            android:layout_alignStart="@+id/button3"
+            android:layout_marginBottom="22dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:hint="User type"
+            android:focusable="false"
+            android:id="@+id/edituser_userType"
+            android:layout_marginBottom="11dp"
+            android:layout_above="@+id/edituser_email"
+            android:layout_alignStart="@+id/edituser_email" />
+
+        <TextView
+            android:text="User Details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
+            android:id="@+id/textView18"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:layout_above="@+id/edituser_userType"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="14dp" />
+    </RelativeLayout>
 
 
 </RelativeLayout>

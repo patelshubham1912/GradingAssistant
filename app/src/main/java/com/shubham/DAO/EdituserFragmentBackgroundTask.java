@@ -1,3 +1,5 @@
+
+
 package com.shubham.DAO;
 import com.shubham.Beans.*;
 import com.shubham.gradingassistant.*;
@@ -17,24 +19,24 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
-/**
- * Created by $hubham on 13/10/2016.
- */
-public class CreatecourseFragmentBackgroundTask extends AsyncTask<Void,Void,String> {
 
+/**
+ * Created by neha_shet on 11/24/2016.
+ */
+
+
+public class EdituserFragmentBackgroundTask extends AsyncTask<String,Void,String> {
     public interface AsyncResponse {
         void processFinish(String output);
     }
 
     public AsyncResponse delegate = null;
     Context ctx;
-    course course=new course();
+    com.shubham.Beans.admin_view admin_view=new admin_view();
 
-    public CreatecourseFragmentBackgroundTask(Context ctx,course course,AsyncResponse delegate) {
+    public EdituserFragmentBackgroundTask(Context ctx,AsyncResponse delegate) {
         this.ctx=ctx;
         this.delegate=delegate;
-        this.course = course;
-
     }
 
     @Override
@@ -43,10 +45,10 @@ public class CreatecourseFragmentBackgroundTask extends AsyncTask<Void,Void,Stri
     }
 
     @Override
-    protected String doInBackground(Void ... params) {
+    protected String doInBackground(String... params) {
 
 
-        String login_url = "http://"+ctx.getString(R.string.ip_address)+"/android_connect/CreateCourse.php";
+        String login_url = "http://"+ctx.getString(R.string.ip_address)+"/android_connect/EditUserDetails.php";
         try {
             URL url=new URL(login_url);
             HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
@@ -55,11 +57,16 @@ public class CreatecourseFragmentBackgroundTask extends AsyncTask<Void,Void,Stri
             httpURLConnection.setDoOutput(true);
             OutputStream OS =httpURLConnection.getOutputStream();
             BufferedWriter bufferedWriter= new BufferedWriter(new OutputStreamWriter(OS,"UTF-8"));
-            String data = URLEncoder.encode("course_id","UTF-8")+"="+URLEncoder.encode(course.getCourse_id(),"UTF-8")+"&"
-                    +URLEncoder.encode("course_name","UTF-8")+"="+URLEncoder.encode(course.getCourse_name(),"UTF-8")+"&"
-                    +URLEncoder.encode("specialization_type","UTF-8")+"="+URLEncoder.encode(course.getSpecialization_type(),"UTF-8")+"&"
-                    +URLEncoder.encode("degree_type","UTF-8")+"="+URLEncoder.encode(course.getDegree_type(),"UTF-8")+"&"
-                    +URLEncoder.encode("pre_requisite","UTF-8")+"="+URLEncoder.encode(course.getPre_requisite(),"UTF-8");
+            String data="";
+            if(params[1].equals("select"))
+                data = URLEncoder.encode("user_id","UTF-8")+"="+URLEncoder.encode(params[0],"UTF-8")+"&"+URLEncoder.encode("query","UTF-8")+"="+URLEncoder.encode(params[1],"UTF-8");
+            else if(params[3].equals("update"))
+                //edittext.getText().toString(),email_id,username,"update"
+                data = URLEncoder.encode("user_id","UTF-8")+"="+URLEncoder.encode(params[0],"UTF-8")+"&"
+                        +URLEncoder.encode("query","UTF-8")+"="+URLEncoder.encode(params[3],"UTF-8")+"&"
+                        +URLEncoder.encode("email_id","UTF-8")+"="+URLEncoder.encode(params[1],"UTF-8")+"&"
+                        +URLEncoder.encode("user_name","UTF-8")+"="+URLEncoder.encode(params[2],"UTF-8")+"&"
+                        +URLEncoder.encode("user_type","UTF-8")+"="+URLEncoder.encode(params[4],"UTF-8")+"&";
             bufferedWriter.write(data);
             bufferedWriter.flush();
             bufferedWriter.close();
@@ -97,7 +104,7 @@ public class CreatecourseFragmentBackgroundTask extends AsyncTask<Void,Void,Stri
 
     @Override
     protected void onPostExecute(String result) {
-        // Toast.makeText(ctx,result.getEmail_id(),Toast.LENGTH_SHORT).show();
+        //Toast.makeText(ctx,result,Toast.LENGTH_SHORT).show();
         //setValues(result);
         delegate.processFinish(result);
         // LoginActivity loginActivity=new LoginActivity();

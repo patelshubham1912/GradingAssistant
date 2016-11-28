@@ -1,80 +1,109 @@
 package com.shubham.gradingassistant;
 
 import android.app.Activity;
-import android.graphics.Typeface;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.TypedValue;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.widget.EditText;
 import android.widget.Toast;
 
-import com.shubham.DAO.classActivityResultFragmentBackgroundTask;
+import com.shubham.Beans.admin_view;
+import com.shubham.DAO.EdituserFragmentBackgroundTask;
+
 
 
 public class EdituserFragment extends Fragment {
-    RelativeLayout relativeLayout;
-    String s[];
 
+    EditText edittext,edituser_type;
+    EditText edituser_email;
+    EditText edituser_username;
+    Button button1,button2,edituser_cancel;
+    admin_view admin_view;
     public EdituserFragment() {
         // Required empty public constructor
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
 
-
-        final View v=  inflater.inflate(R.layout.activity_viewclassactivityresult, container, false);
-
-        final String courseId="C001";
-
-        classActivityResultFragmentBackgroundTask backgroundTask = new classActivityResultFragmentBackgroundTask(getContext(), new classActivityResultFragmentBackgroundTask.AsyncResponse() {
+        View v = inflater.inflate(R.layout.activity_edituser, container, false);
+        edittext=(EditText)v.findViewById(R.id.editUser_searchUser);
+        edituser_email=(EditText)v.findViewById(R.id.edituser_email);
+        edituser_type=(EditText)v.findViewById(R.id.edituser_userType);
+        edituser_username=(EditText)v.findViewById(R.id.edituser_username);
+        button1 = (Button) v.findViewById(R.id.editUser_Search);
+        Toast.makeText(getContext(),edittext.getText().toString(),Toast.LENGTH_SHORT).show();
+        button1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void processFinish(String output) {
-                relativeLayout=(RelativeLayout)v.findViewById(R.id.viewClassActivityResult_RelativeLayout);
-                int temp=0;
-                s=output.split("#");
-                try {
-                    temp = Integer.parseInt(s[0].replaceAll("[\\D]", ""));
-                    temp--;
-                }
-                catch (NumberFormatException e){}
+            public void onClick(View v) {
+                String user_id = edittext.getText().toString();
 
-                for(int i=0;i<=temp;i++)
-                {
-                    String s1[]=s[i+1].toString().split("\\$");
-                    TextView title=new TextView(v.getContext());
-                    title.setText(s1[0]);
-                    title.setId(v.generateViewId());
-                    title.setTypeface(null, Typeface.BOLD);
-                    title.setTextSize(TypedValue.COMPLEX_UNIT_PX,40);
-                    RelativeLayout.LayoutParams titleparams=new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-                    titleparams.setMargins(20,i*300,20,0);
-                    relativeLayout.addView(title,titleparams);
+                EdituserFragmentBackgroundTask backgroundTask=new EdituserFragmentBackgroundTask(getContext(), new EdituserFragmentBackgroundTask.AsyncResponse() {
+                    @Override
+                    public void processFinish(String output) {
 
-                    TextView textView=new TextView(v.getContext());
-                    textView.setText("Mean: "+s1[1]+"\nMedian: "+s1[2]+"\nStandard Deviation: "+s1[3]+"\nHighest Score: "+s1[4]+"\nLowest Score: "+s1[5]);
-                    textView.setSingleLine(false);
-                    textView.setId(v.generateViewId());
-                    RelativeLayout.LayoutParams textViewparams=new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-                    textViewparams.setMargins(20,i*300+50,20,0);
-                    relativeLayout.addView(textView,textViewparams);
-                }
-                //courseDescription.setText(output);
-                Toast.makeText(getContext(),output+"",Toast.LENGTH_SHORT).show();
+                        //admin_view=output;
+                        //edituser_email
+                        String[] str = output.split("#");
+                        if(str[0].equals("error")) {
+
+                            Toast.makeText(getContext(),str[1],Toast.LENGTH_SHORT).show();
+                        } else {
+
+                            edituser_email.setText(str[3]);
+                            edituser_username.setText(str[2]);
+                            edituser_type.setText(str[1]);
+                        }
+                    }
+                });
+
+               backgroundTask.execute(user_id,"select");
             }
         });
-        backgroundTask.execute(courseId);
+
+        button2 = (Button) v.findViewById(R.id.edit_user);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email_id = edituser_email.getText().toString();
+                String username = edituser_username.getText().toString();
+
+                Toast.makeText(getContext(),email_id,Toast.LENGTH_SHORT).show();
+                EdituserFragmentBackgroundTask backgroundTask=new EdituserFragmentBackgroundTask(getContext(), new EdituserFragmentBackgroundTask.AsyncResponse() {
+                    @Override
+                    public void processFinish(String output) {
+
+                        Toast.makeText(getContext(),output,Toast.LENGTH_LONG).show();
+
+                    }
+                });
+                backgroundTask.execute(edittext.getText().toString(),email_id,username,"update",edituser_type.getText().toString());
+                //Toast.makeText(getContext(),edittext.getText().toString(),Toast.LENGTH_SHORT).show();
+            }
+        });
+        edituser_cancel = (Button) v.findViewById(R.id.edituser_cancel);
+        edituser_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                edittext.setText("");
+                edituser_email.setText("");
+                edituser_username.setText("");
+                edituser_type.setText("");
+            }
+        });
+        //    Toast.makeText(getContext(),edittext.getText().toString(),Toast.LENGTH_SHORT).show();
 
         return v;
-
     }
 
 }
