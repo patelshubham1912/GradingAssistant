@@ -67,6 +67,8 @@ public class LoginActivity extends Activity{
                         }
 
                         Toast.makeText(getBaseContext(),output,Toast.LENGTH_SHORT).show();
+                        SessionManager sessionManger = new SessionManager(getBaseContext());
+                        sessionManger.createLoginSession(admin_view.getUser_id(),admin_view.getEmail_id());
 
                         Intent intent=new Intent(getBaseContext() ,MainActivity.class);
                         intent.putExtra("admin_view", admin_view);

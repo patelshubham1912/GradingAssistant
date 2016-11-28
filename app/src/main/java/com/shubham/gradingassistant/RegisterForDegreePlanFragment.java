@@ -14,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.shubham.Beans.admin_view;
 import com.shubham.Beans.course;
 import com.shubham.DAO.RegisterForDegeePlanFragmentBackgroundTask;
 /**
@@ -62,7 +63,11 @@ public class RegisterForDegreePlanFragment extends Fragment {
 
                     }
                 });
-                String user_id = "123";
+
+                SessionManager sessionManger = new SessionManager(getContext());
+                admin_view userData = sessionManger.getUserDetails();
+                String user_id = userData.getUser_id();
+                //Toast.makeText(getContext(),user_id,Toast.LENGTH_SHORT).show();
                 backgroundTask.execute(specialization_type, major_type, user_id );
             }
         });
