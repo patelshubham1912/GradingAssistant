@@ -9,7 +9,10 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
+import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.shubham.Beans.admin_view;
@@ -21,9 +24,13 @@ import com.shubham.DAO.StudentActivityBackgroundTask;
 
 public class StudentActivity extends Activity {
     Button notificationsButton;
-
+    String str[];
     String s[];
-
+    String cs[];
+    Button course1;
+    Button course2;
+    Button course3;
+    TextView gpaText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,8 +44,9 @@ public class StudentActivity extends Activity {
             public void processFinish(String output) {
 
                 int temp = 0;
-                s = output.split("#");
-
+                str=output.split("\\%");
+                s = str[0].split("#");
+                cs = str[1].split("\\$");
                 temp = Integer.parseInt(s[0].replaceAll("[\\D]", ""));
                 if (temp > 0) {
                     notificationsButton.setText("Notifications\n(" + temp + "" + ")");
@@ -56,7 +64,44 @@ public class StudentActivity extends Activity {
                     }
 
                 }
-                //courseDescription.setText(output);
+
+                //Courses and average gpa
+                course1 = (Button)findViewById(R.id.fragment_first_course1);
+                course2 = (Button)findViewById(R.id.fragment_first_course2);
+                course3 = (Button)findViewById(R.id.fragment_first_course3);
+                gpaText = (TextView) findViewById(R.id.fragment_first_gpa);
+
+                course1.setText(cs[0]);
+                course2.setText(cs[1]);
+                course3.setText(cs[2]);
+                gpaText.setText(cs[cs.length-1].substring(0,4));
+
+                course1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent=new Intent(getBaseContext() ,MainActivity.class);
+                        intent.putExtra("admin_view", admin_view);
+                        startActivity(intent);
+                    }
+                });
+
+                course2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent=new Intent(getBaseContext() ,MainActivity.class);
+                        intent.putExtra("admin_view", admin_view);
+                        startActivity(intent);
+                    }
+                });
+
+                course3.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent=new Intent(getBaseContext() ,MainActivity.class);
+                        intent.putExtra("admin_view", admin_view);
+                        startActivity(intent);
+                    }
+                });
 
             }
         });

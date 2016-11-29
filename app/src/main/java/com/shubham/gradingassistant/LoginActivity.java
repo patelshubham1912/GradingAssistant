@@ -47,7 +47,8 @@ public class LoginActivity extends Activity{
                 LoginActivityBackgroundTask backgroundTask=new LoginActivityBackgroundTask(ctx, new LoginActivityBackgroundTask.AsyncResponse() {
                     @Override
                     public void processFinish(String output) {
-
+                        if(!output.replaceAll("\\s","").equals("Invalid"))
+                        {
                         s=output.split("#");
                         admin_view.setUser_id(s[0]);
                         admin_view.setUser_type(s[1]);
@@ -55,24 +56,26 @@ public class LoginActivity extends Activity{
                         admin_view.setEmail_id(s[3]);
                         admin_view.setPassword(s[4]);
 
-                        if(admin_view.getEmail_id().equals("Student"))
-                        {
+                            if (admin_view.getEmail_id().equals("Student")) {
 
-                        }else if(admin_view.getEmail_id().equals("Professor"))
-                        {
+                            } else if (admin_view.getEmail_id().equals("Professor")) {
 
-                        }else if(admin_view.getEmail_id().equals("Admin"))
-                        {
+                            } else if (admin_view.getEmail_id().equals("Admin")) {
 
-                        }
+                            }
 
                         Toast.makeText(getBaseContext(),output,Toast.LENGTH_SHORT).show();
                         SessionManager sessionManger = new SessionManager(getBaseContext());
                         sessionManger.createLoginSession(admin_view.getUser_id(),admin_view.getEmail_id());
 
-                        Intent intent=new Intent(getBaseContext() ,MainActivity.class);
+                        Intent intent=new Intent(getBaseContext() ,StudentActivity.class);
                         intent.putExtra("admin_view", admin_view);
                         startActivity(intent);
+                        }else{
+                            Toast.makeText(getBaseContext(), "Invalid Login Credentials", Toast.LENGTH_SHORT).show();
+                            user_id.setText("");
+                            password.setText("");
+                        }
 
                     }
                 });
