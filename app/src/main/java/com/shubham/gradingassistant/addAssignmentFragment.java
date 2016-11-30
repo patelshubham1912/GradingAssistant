@@ -15,7 +15,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.shubham.DAO.*;
-import org.w3c.dom.Text;
 
 import java.io.File;
 
@@ -24,6 +23,8 @@ public class addAssignmentFragment extends Fragment {
     TextView fileName;
     Button  browse;
     Button upload;
+    String courseId="C001";
+
     public addAssignmentFragment() {
         // Required empty public constructor
     }
@@ -34,10 +35,10 @@ public class addAssignmentFragment extends Fragment {
         // Inflate the layout for this fragment
 
 
-        View v=  inflater.inflate(R.layout.activity_addslide, container, false);
-        browse=(Button)v.findViewById(R.id.addSlide_browse);
-        upload=(Button)v.findViewById(R.id.addSlide_upload);
-        fileName=(TextView)v.findViewById(R.id.addSlide_filename);
+        View v=  inflater.inflate(R.layout.activity_addassignment, container, false);
+        browse=(Button)v.findViewById(R.id.addAssignment_browse);
+        upload=(Button)v.findViewById(R.id.addAssignment_upload);
+        fileName=(TextView)v.findViewById(R.id.addAssignment_filename);
         browse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,9 +46,10 @@ public class addAssignmentFragment extends Fragment {
                 Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
                 intent.setType("*/*");
                 startActivityForResult(intent, PICKFILE_RESULT_CODE);
-
             }
         });
+
+
         return v;
 
     }
@@ -76,9 +78,23 @@ public class addAssignmentFragment extends Fragment {
                         }
                     } else if (uriString.startsWith("file://")) {
                         displayName = myFile.getName();
+
                     }
                     Toast.makeText(getContext(),displayName,Toast.LENGTH_SHORT).show();
                     fileName.setText(displayName);
+                    upload.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            addDocumentsBackgroundTask backgroundTask = new addDocumentsBackgroundTask(getContext(), new addDocumentsBackgroundTask.AsyncResponse() {
+                                @Override
+                                public void processFinish(String output) {
+
+                                    Toast.makeText(getContext(),"output",Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                            backgroundTask.execute(courseId,"assignment",fileName.getText().toString());
+                        }
+                    });
                 }
                 break;
         }

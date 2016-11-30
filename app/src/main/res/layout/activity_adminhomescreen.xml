@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="Atharv Kashyap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="55dp"
+        android:id="@+id/admin_name" />
+
+    <TextView
+        android:text="kahsyap.atharv@gmail.com"
+        android:layout_width="wrap_content"
+        android:textSize="20dp"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:id="@+id/admin_email"
+        android:layout_below="@+id/admin_name"
+        android:layout_alignStart="@+id/admin_name" />
+
+    <TextView
+        android:text="Admin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:id="@+id/admin_role"
+        android:layout_below="@+id/admin_email"
+        android:layout_centerHorizontal="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="right|top"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/border_layout"
+        android:layout_marginTop="44dp"
+        android:layout_below="@+id/admin_role">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="16dp"
+            android:background="#FFFFFF"
+            android:textColor="#000000"
+            android:text="Notifications\n(0)"
+            android:id="@+id/admin_notifications"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true" />
+
+    </RelativeLayout>
+</RelativeLayout>

@@ -56,9 +56,9 @@ public class MainActivity extends AppCompatActivity
 
         Intent i=getIntent();
         admin_view=(admin_view)i.getSerializableExtra("admin_view");
-        Toast.makeText(getBaseContext(),admin_view.getEmail_id(),Toast.LENGTH_SHORT).show();
+        Toast.makeText(getBaseContext(),admin_view.getUser_type(),Toast.LENGTH_SHORT).show();
 
-        if(admin_view.getEmail_id().equals("pqr"))
+        if(admin_view.getUser_type().equals("admin"))
         {
             //Admin View
             menu.setGroupCheckable(R.id.Admin, true, true);
@@ -67,8 +67,14 @@ public class MainActivity extends AppCompatActivity
             menu.setGroupVisible(R.id.Student,false);
             menu.setGroupCheckable(R.id.Professor,false,false);
             menu.setGroupVisible(R.id.Professor,false);
+
+            Toast.makeText(getBaseContext(),"Reached123",Toast.LENGTH_SHORT).show();
+            adminHomeFragment fragment2 = new adminHomeFragment();
+            FragmentTransaction fragmentTransaction2 = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction2.replace(R.id.fragment_container,fragment2);
+            fragmentTransaction2.commit();
         }
-        else if(admin_view.getEmail_id().equals("xyz"))
+        else if(admin_view.getUser_type().equals("student"))
         {
             //Student View
             menu.setGroupCheckable(R.id.Admin, false, false);
@@ -88,6 +94,10 @@ public class MainActivity extends AppCompatActivity
             menu.setGroupCheckable(R.id.Professor,true,true);
             menu.setGroupVisible(R.id.Professor,true);
         }
+//        viewCourseDescriptionFragment fragment2 = new viewCourseDescriptionFragment();
+//        FragmentTransaction fragmentTransaction2 = getSupportFragmentManager().beginTransaction();
+//        fragmentTransaction2.replace(R.id.fragment_container,fragment2);
+//        fragmentTransaction2.commit();
     }
 
     @Override

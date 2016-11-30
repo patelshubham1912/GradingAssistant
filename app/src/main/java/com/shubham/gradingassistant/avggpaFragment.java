@@ -13,11 +13,12 @@ import android.widget.Toast;
 
 import com.shubham.DAO.avggpaFragmentBackgroundTask;
 
+import org.w3c.dom.Text;
+
 
 public class avggpaFragment extends Fragment {
 
-    EditText avgclassgpa;
-    TextView course_name;
+    TextView avgclassgpa;
     public avggpaFragment() {
         // Required empty public constructor
     }
@@ -29,11 +30,9 @@ public class avggpaFragment extends Fragment {
 
 
         View v=  inflater.inflate(R.layout.activity_avggpa, container, false);
-        course_name = (TextView)v.findViewById(R.id.avg_course_name);
 
         final String courseId="C001";
-        course_name.setText("Average Class GPA for "+courseId);
-        avgclassgpa = (EditText)v.findViewById(R.id.avgclassgpa);
+        avgclassgpa = (TextView)v.findViewById(R.id.avgclassgpa);
 
         avggpaFragmentBackgroundTask backgroundTask = new avggpaFragmentBackgroundTask(getContext(), new avggpaFragmentBackgroundTask.AsyncResponse() {
             @Override

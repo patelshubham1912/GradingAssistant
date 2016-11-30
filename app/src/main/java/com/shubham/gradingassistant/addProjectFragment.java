@@ -15,18 +15,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.shubham.DAO.*;
-import org.w3c.dom.Text;
 
 import java.io.File;
 
 
-public class AddslidesFragment extends Fragment {
+public class addProjectFragment extends Fragment {
     TextView fileName;
     Button  browse;
     Button upload;
     String courseId="C001";
 
-    public AddslidesFragment() {
+    public addProjectFragment() {
         // Required empty public constructor
     }
 
@@ -36,10 +35,10 @@ public class AddslidesFragment extends Fragment {
         // Inflate the layout for this fragment
 
 
-        View v=  inflater.inflate(R.layout.activity_addslide, container, false);
-        browse=(Button)v.findViewById(R.id.addSlide_browse);
-        upload=(Button)v.findViewById(R.id.addSlide_upload);
-        fileName=(TextView)v.findViewById(R.id.addSlide_filename);
+        View v=  inflater.inflate(R.layout.activity_addproject, container, false);
+        browse=(Button)v.findViewById(R.id.addProject_browse);
+        upload=(Button)v.findViewById(R.id.addProject_upload);
+        fileName=(TextView)v.findViewById(R.id.addProject_filename);
         browse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,7 +92,7 @@ public class AddslidesFragment extends Fragment {
                                     Toast.makeText(getContext(),output,Toast.LENGTH_SHORT).show();
                                 }
                             });
-                            backgroundTask.execute(courseId,"slide",fileName.getText().toString());
+                            backgroundTask.execute(courseId,"project",fileName.getText().toString());
                         }
                     });
                 }

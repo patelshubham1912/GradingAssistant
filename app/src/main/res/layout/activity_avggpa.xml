@@ -2,24 +2,28 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:hint="Average class GPA:3.5"
+        android:gravity="center_horizontal"
+        android:text="TBD"
+        android:textSize="90dp"
         android:ems="10"
-        android:layout_marginTop="216dp"
+        android:layout_marginTop="90dp"
         android:id="@+id/avgclassgpa"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/avg_course_name"
         android:layout_centerHorizontal="true" />
 
     <TextView
-        android:text="TextView"
+        android:text="Average Class GPA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="64dp"
+        android:textSize="25dp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="91dp"
         android:id="@+id/avg_course_name"
-        android:layout_alignStart="@+id/avgclassgpa"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

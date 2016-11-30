@@ -56,21 +56,27 @@ public class LoginActivity extends Activity{
                         admin_view.setEmail_id(s[3]);
                         admin_view.setPassword(s[4]);
 
-                            if (admin_view.getEmail_id().equals("Student")) {
+                            Toast.makeText(getBaseContext(),output,Toast.LENGTH_SHORT).show();
+                            SessionManager sessionManger = new SessionManager(getBaseContext());
+                            sessionManger.createLoginSession(admin_view.getUser_id(),admin_view.getEmail_id());
 
-                            } else if (admin_view.getEmail_id().equals("Professor")) {
+                            if (admin_view.getUser_type().equals("student")) {
+                                Intent intent=new Intent(getBaseContext() ,StudentActivity.class);
+                                intent.putExtra("admin_view", admin_view);
+                                startActivity(intent);
+                            } else if (admin_view.getUser_type().equals("professor")) {
+                                Intent intent=new Intent(getBaseContext() ,ProfessorActivity.class);
+                                intent.putExtra("admin_view", admin_view);
+                                startActivity(intent);
 
-                            } else if (admin_view.getEmail_id().equals("Admin")) {
-
+                            } else if (admin_view.getUser_type().equals("admin")) {
+                                Intent intent=new Intent(getBaseContext() ,MainActivity.class);
+                                intent.putExtra("admin_view", admin_view);
+                                startActivity(intent);
                             }
 
-                        Toast.makeText(getBaseContext(),output,Toast.LENGTH_SHORT).show();
-                        SessionManager sessionManger = new SessionManager(getBaseContext());
-                        sessionManger.createLoginSession(admin_view.getUser_id(),admin_view.getEmail_id());
 
-                        Intent intent=new Intent(getBaseContext() ,StudentActivity.class);
-                        intent.putExtra("admin_view", admin_view);
-                        startActivity(intent);
+
                         }else{
                             Toast.makeText(getBaseContext(), "Invalid Login Credentials", Toast.LENGTH_SHORT).show();
                             user_id.setText("");

@@ -8,17 +8,17 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="81dp"
-        android:id="@+id/addSlide_browse"
+        android:id="@+id/addQuiz_browse"
         android:text="Browse" />
 
     <EditText
         android:text="No attachment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/addSlide_browse"
+        android:layout_below="@+id/addQuiz_browse"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="41dp"
-        android:id="@+id/addSlide_filename" />
+        android:id="@+id/addQuiz_filename" />
 
     <Button
         android:text="Upload slides"
@@ -26,6 +26,6 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/addSlide_upload" />
+        android:id="@+id/addQuiz_upload" />
 
 </RelativeLayout>
