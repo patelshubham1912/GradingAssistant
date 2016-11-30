@@ -55,9 +55,9 @@
 
 
         <group android:checkableBehavior="single" android:id="@+id/Professor" android:visible="false">
-            <item android:id="@+id/nav_first3" android:icon="@drawable/ic_action_name"
+            <item android:id="@+id/nav_addcoursedescription" android:icon="@drawable/ic_action_name"
                 android:title="Course Description" />
-            <item android:id="@+id/nav_second3" android:icon="@drawable/ic_action_name"
+            <item android:id="@+id/nav_addAssignment" android:icon="@drawable/ic_action_name"
                 android:title="Assignments" />
             <item android:id="@+id/nav_addslide" android:icon="@drawable/ic_action_name"
                 android:title="Slides" />

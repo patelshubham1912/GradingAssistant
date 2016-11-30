@@ -8,17 +8,17 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="81dp"
-        android:id="@+id/button2"
+        android:id="@+id/addSlide_browse"
         android:text="Browse" />
 
     <TextView
         android:text="sequencediagram.ppt attached"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button2"
+        android:layout_below="@+id/addSlide_browse"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="41dp"
-        android:id="@+id/textView6" />
+        android:id="@+id/addSlide_filename" />
 
     <Button
         android:text="Upload slides"
@@ -26,6 +26,6 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/button3" />
+        android:id="@+id/addSlide_upload" />
 
 </RelativeLayout>

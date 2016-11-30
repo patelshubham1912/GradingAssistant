@@ -129,14 +129,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_second3) {
-            // First Fragment
-            FirstFragment fragment = new FirstFragment();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container,fragment);
-            fragmentTransaction.commit();
 
-        }
 //        else if (id == R.id.nav_third3) {
 //            // Second Fragment
 //            SecondFragment fragment = new SecondFragment();
@@ -144,7 +137,7 @@ public class MainActivity extends AppCompatActivity
 //            fragmentTransaction.replace(R.id.fragment_container,fragment);
 //            fragmentTransaction.commit();
 //        }
-        else if (id == R.id.nav_changepassword) {
+       if (id == R.id.nav_changepassword) {
             // Second Fragment
             ChangepasswordFragment fragment = new ChangepasswordFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -314,6 +307,19 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.fragment_container,fragment);
             fragmentTransaction.commit();
         }
+        else if(id==R.id.nav_addcoursedescription)
+        {
+            addCourseDescriptionFragment fragment = new addCourseDescriptionFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container,fragment);
+            fragmentTransaction.commit();
+        }else if(id==R.id.nav_addAssignment)
+       {
+           addAssignmentFragment fragment = new addAssignmentFragment();
+           FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+           fragmentTransaction.replace(R.id.fragment_container,fragment);
+           fragmentTransaction.commit();
+       }
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
