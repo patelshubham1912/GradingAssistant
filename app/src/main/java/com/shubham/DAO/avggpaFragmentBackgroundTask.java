@@ -42,7 +42,7 @@ public class avggpaFragmentBackgroundTask extends AsyncTask<String,Void,String> 
     protected String doInBackground(String... params) {
 
 
-        String login_url = "http://"+ctx.getString(R.string.ip_address)+"/android_connect/LinkcourseandprofessorFragment.php";
+        String login_url = "http://"+ctx.getString(R.string.ip_address)+"/android_connect/classAvgGpa.php";
         try {
             URL url=new URL(login_url);
             HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
@@ -51,7 +51,7 @@ public class avggpaFragmentBackgroundTask extends AsyncTask<String,Void,String> 
             httpURLConnection.setDoOutput(true);
             OutputStream OS =httpURLConnection.getOutputStream();
             BufferedWriter bufferedWriter= new BufferedWriter(new OutputStreamWriter(OS,"UTF-8"));
-            String data = URLEncoder.encode("course_id","UTF-8")+"="+URLEncoder.encode(params[0],"UTF-8")+"&"+URLEncoder.encode("professor_id","UTF-8")+"="+URLEncoder.encode(params[1],"UTF-8");
+            String data = URLEncoder.encode("course_id","UTF-8")+"="+URLEncoder.encode(params[0],"UTF-8");
             bufferedWriter.write(data);
             bufferedWriter.flush();
             bufferedWriter.close();

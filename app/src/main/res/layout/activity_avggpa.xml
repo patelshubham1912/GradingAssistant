@@ -6,9 +6,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Average class GPA: 82.16"
+        android:hint="Average class GPA:3.5"
         android:ems="10"
-        android:layout_alignParentTop="true"
         android:layout_marginTop="216dp"
-        android:id="@+id/editText17" />
+        android:id="@+id/avgclassgpa"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="64dp"
+        android:id="@+id/avg_course_name"
+        android:layout_alignStart="@+id/avgclassgpa"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 </RelativeLayout>

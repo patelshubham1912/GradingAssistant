@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity
         }else
         {
             //Professor View
+            Toast.makeText(getBaseContext(),"this is here",Toast.LENGTH_SHORT).show();
             menu.setGroupCheckable(R.id.Admin, true, true);
             menu.setGroupVisible(R.id.Admin, true);
             menu.setGroupCheckable(R.id.Student,true,true);
