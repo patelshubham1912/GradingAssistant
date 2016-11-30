@@ -67,7 +67,7 @@
                 android:title="Projects" />
             <item android:id="@+id/nav_updategrades" android:icon="@drawable/ic_action_name"
                 android:title="Update Grades" />
-            <item android:id="@+id/nav_eigth3" android:icon="@drawable/ic_action_name"
+            <item android:id="@+id/nav_graphicalrepresentation" android:icon="@drawable/ic_action_name"
                 android:title="Graphical Representation" />
             <item android:id="@+id/nav_avggpa" android:icon="@drawable/ic_action_name"
                 android:title="Average Class GPA" />
