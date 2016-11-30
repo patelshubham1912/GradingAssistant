@@ -47,7 +47,7 @@
             android:text="Credit hours:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="54dp"
+            android:layout_marginTop="10dp"
             android:id="@+id/textView16"
             android:layout_below="@+id/student"
             android:layout_alignEnd="@+id/textView13" />
@@ -56,7 +56,7 @@
             android:text="Pre-requisite 1:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="39dp"
+            android:layout_marginTop="30dp"
             android:id="@+id/textView17"
             android:layout_below="@+id/credit"
             android:layout_alignStart="@+id/textView16" />
@@ -86,27 +86,10 @@
             android:id="@+id/degreetype"
             android:entries="@array/majorType"
             android:layout_below="@+id/specialization"
-            android:layout_toEndOf="@+id/btedit" />
+            android:layout_toEndOf="@+id/btedit"
+            android:layout_alignStart="@+id/specialization" />
 
-        <TextView
-            android:text="Specialization type:"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView12"
-            android:layout_below="@+id/textView"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="28dp" />
-
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/specialization"
-            android:entries="@array/specializationType"
-            android:layout_alignTop="@+id/textView12"
-            android:layout_alignParentEnd="true"
-            android:layout_toEndOf="@+id/btedit" />
-
-        <TextView
+            <TextView
             android:text="Course name:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -119,20 +102,12 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:ems="10"
-                android:id="@+id/prereq1"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
                 android:id="@+id/credit"
                 android:layout_alignBaseline="@+id/textView16"
                 android:layout_alignBottom="@+id/textView16"
                 android:layout_alignStart="@+id/prereq1"
-                android:layout_marginStart="11dp" />
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="5dp" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -160,7 +135,35 @@
                 android:id="@+id/btedit"
                 android:layout_alignTop="@+id/textView17"
                 android:layout_toStartOf="@+id/textView"
-                android:layout_marginEnd="14dp" />
+                android:layout_marginTop="35dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/prereq1"
+                android:layout_alignBaseline="@+id/textView17"
+                android:layout_alignBottom="@+id/textView17"
+                android:layout_alignStart="@+id/btedit"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:text="Specialization type:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView12"
+                android:layout_marginTop="21dp"
+                android:layout_below="@+id/edcoursename"
+                android:layout_alignStart="@+id/textView13" />
+
+            <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/specialization"
+            android:entries="@array/specializationType"
+                android:layout_alignTop="@+id/textView12"
+                android:layout_alignStart="@+id/edcoursename" />
 
         </RelativeLayout>
     </ScrollView>

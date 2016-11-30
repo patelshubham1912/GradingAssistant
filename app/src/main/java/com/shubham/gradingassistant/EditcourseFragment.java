@@ -60,10 +60,13 @@ public class EditcourseFragment extends Fragment {
                     public void processFinish(String output) {
                         s = output.split("#");
                         coursename.setText(s[0]);
-                        prereq1.setText(s[3]);
-                        Studentsnumber.setText(s[4]);
-                        credithour.setText(s[5]);
-                        Toast.makeText(getContext(), output, Toast.LENGTH_SHORT).show();
+                        prereq1.setText(s[5]);
+                        Studentsnumber.setText(s[3]);
+                        credithour.setText(s[4]);
+
+                        specializationtype.setSelection(getIndex(specializationtype, s[1]));
+                        degreetype.setSelection(getIndex(degreetype,s[2]));
+                        //Toast.makeText(getContext(), output, Toast.LENGTH_SHORT).show();
                         }
                 });
                         backgroundTask.execute(cid, "select");
@@ -79,6 +82,8 @@ public class EditcourseFragment extends Fragment {
                 String ch = credithour.getText().toString();
                 String pre1 = prereq1.getText().toString();
                 String courseId=courseid.getText().toString();
+                String spclType = (String)specializationtype.getSelectedItem();
+                String degreeType = (String)degreetype.getSelectedItem();
 
                 EditCourseBackgroundTask backgroundTask=new EditCourseBackgroundTask(getContext(), new EditCourseBackgroundTask.AsyncResponse() {
                     @Override
@@ -87,12 +92,24 @@ public class EditcourseFragment extends Fragment {
                         Toast.makeText(getContext(),output,Toast.LENGTH_SHORT).show();
                     }
                 });
-                backgroundTask.execute(cn,"update",ns,ch,pre1,"","",courseId);
+                backgroundTask.execute(cn,"update",ns,ch,pre1,spclType,degreeType,courseId);
                     }
         });
                  return v;
 
         }
+
+    private int getIndex(Spinner spinner, String myString){
+
+        int index = 0;
+
+        for (int i=0;i<spinner.getCount();i++){
+            if (spinner.getItemAtPosition(i).equals(myString)){
+                index = i;
+            }
+        }
+        return index;
+    }
 }
 
 

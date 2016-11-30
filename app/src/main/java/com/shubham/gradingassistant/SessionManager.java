@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
 import com.shubham.Beans.admin_view;
+import com.shubham.Beans.course;
 
 /**
  * Created by neha_shet on 11/28/2016.
@@ -36,6 +37,8 @@ public class SessionManager {
     // Email address (make variable public to access from outside)
     public static final String KEY_EMAIL = "email";
 
+    public static final String KEY_COURSE_ID = "course_id";
+    public static final String KEY_COURSE_NAME = "course_email";
     // Constructor
     public SessionManager(Context context){
         this._context = context;
@@ -59,7 +62,6 @@ public class SessionManager {
         // commit changes
         editor.commit();
     }
-
     public admin_view getUserDetails() {
 
         admin_view user = new admin_view();
@@ -68,4 +70,27 @@ public class SessionManager {
         return user;
 
     }
+
+    //create course session
+    public void createCourse(String course_id){
+
+        // Storing course_id in pref
+        editor.putString(KEY_COURSE_ID, course_id);
+
+        // Storing email in pref
+       // editor.putString(KEY_COURSE_NAME, course_name);
+
+        // commit changes
+        editor.commit();
+    }
+    public course getCourse(){
+
+        // Storing course_id in pref
+        course course = new course();
+        course.setCourse_id(pref.getString(KEY_COURSE_ID,null));
+        //course.setCourse_name(pref.getString(KEY_COURSE_NAME,null));
+        return course;
+    }
+
+
 }
