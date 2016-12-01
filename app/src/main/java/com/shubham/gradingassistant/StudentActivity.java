@@ -31,6 +31,7 @@ public class StudentActivity extends Activity {
     Button course2;
     Button course3;
     TextView gpaText;
+    Button progress_tracker;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,6 +110,17 @@ public class StudentActivity extends Activity {
                                 startActivity(intent);
                             }
                         });
+                    progress_tracker.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                            Intent intent = new Intent(getBaseContext(),ProgressTrackerActivity.class);
+                            startActivity(intent);
+
+
+                        }
+                    });
+
                     }else {
                     Intent intent = new Intent(getBaseContext(), RegisterForDegreePlanActivity.class);
                     intent.putExtra("admin_view", admin_view);
