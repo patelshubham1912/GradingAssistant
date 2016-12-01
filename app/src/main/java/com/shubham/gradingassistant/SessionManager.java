@@ -30,12 +30,14 @@ public class SessionManager {
 
     // All Shared Preferences Keys
     private static final String IS_LOGIN = "IsLoggedIn";
+    public static final String KEY_USERID = "user_id";
 
     // User name (make variable public to access from outside)
     public static final String KEY_NAME = "name";
 
     // Email address (make variable public to access from outside)
     public static final String KEY_EMAIL = "email";
+    public static final String KEY_USERTYPE = "user_type";
 
     public static final String KEY_COURSE_ID = "course_id";
     public static final String KEY_COURSE_NAME = "course_email";
@@ -49,15 +51,17 @@ public class SessionManager {
     /**
      * Create login session
      * */
-    public void createLoginSession(String name, String email){
+    public void createLoginSession(String user_id,String name, String email,String user_type){
         // Storing login value as TRUE
         editor.putBoolean(IS_LOGIN, true);
 
         // Storing name in pref
+        editor.putString(KEY_USERID, user_id);
         editor.putString(KEY_NAME, name);
-
         // Storing email in pref
         editor.putString(KEY_EMAIL, email);
+        editor.putString(KEY_USERTYPE, user_type);
+
 
         // commit changes
         editor.commit();
@@ -65,10 +69,11 @@ public class SessionManager {
     public admin_view getUserDetails() {
 
         admin_view user = new admin_view();
-        user.setUser_id(pref.getString(KEY_NAME,null));
+        user.setUser_id(pref.getString(KEY_USERID,null));
+        user.setUser_name(pref.getString(KEY_NAME,null));
         user.setEmail_id(pref.getString(KEY_EMAIL,null));
+        user.setUser_type(pref.getString(KEY_USERTYPE,null));
         return user;
-
     }
 
     //create course session

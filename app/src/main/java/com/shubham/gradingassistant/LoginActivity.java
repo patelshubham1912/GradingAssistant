@@ -58,18 +58,20 @@ public class LoginActivity extends Activity{
 
                             Toast.makeText(getBaseContext(),output,Toast.LENGTH_SHORT).show();
                             SessionManager sessionManger = new SessionManager(getBaseContext());
-                            sessionManger.createLoginSession(admin_view.getUser_id(),admin_view.getEmail_id());
+                            sessionManger.createLoginSession(admin_view.getUser_id(),admin_view.getUser_name(),admin_view.getEmail_id(),admin_view.getUser_type());
 
-                            if (admin_view.getUser_type().equals("student")) {
+                            admin_view admin_view2=sessionManger.getUserDetails();
+
+                            if (admin_view2.getUser_type().equals("student")) {
                                 Intent intent=new Intent(getBaseContext() ,StudentActivity.class);
                                 intent.putExtra("admin_view", admin_view);
                                 startActivity(intent);
-                            } else if (admin_view.getUser_type().equals("professor")) {
+                            } else if (admin_view2.getUser_type().equals("professor")) {
                                 Intent intent=new Intent(getBaseContext() ,ProfessorActivity.class);
                                 intent.putExtra("admin_view", admin_view);
                                 startActivity(intent);
 
-                            } else if (admin_view.getUser_type().equals("admin")) {
+                            } else if (admin_view2.getUser_type().equals("admin")) {
                                 Intent intent=new Intent(getBaseContext() ,MainActivity.class);
                                 intent.putExtra("admin_view", admin_view);
                                 startActivity(intent);
