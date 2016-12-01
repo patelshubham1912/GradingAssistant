@@ -146,7 +146,7 @@
             android:background="#FFFFFF"
             android:textColor="#000000"
             android:text="Progress Tracker"
-            android:id="@+id/textView5"
+            android:id="@+id/progress_tracker"
             android:gravity="center"
             android:layout_alignParentBottom="true"
             android:layout_alignParentTop="true"
