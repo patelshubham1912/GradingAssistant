@@ -48,6 +48,7 @@ public class StudentActivity extends Activity {
                 int check=0;
                 check = Integer.parseInt(output.substring(2,3).replaceAll("[\\D]", ""));
                // Toast.makeText(getBaseContext(),check, Toast.LENGTH_SHORT).show();
+                //note this
                 if(check>0) {
                    str = output.split("\\%");
                     s = str[0].split("#");
