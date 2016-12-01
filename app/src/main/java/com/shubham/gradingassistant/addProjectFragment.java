@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.shubham.Beans.course;
 import com.shubham.DAO.*;
 
 import java.io.File;
@@ -23,7 +24,7 @@ public class addProjectFragment extends Fragment {
     TextView fileName;
     Button  browse;
     Button upload;
-    String courseId="C001";
+    String courseId;
 
     public addProjectFragment() {
         // Required empty public constructor
@@ -36,6 +37,9 @@ public class addProjectFragment extends Fragment {
 
 
         View v=  inflater.inflate(R.layout.activity_addproject, container, false);
+        SessionManager sessionManger = new SessionManager(getContext());
+        course course = sessionManger.getCourse();
+        courseId=course.getCourse_id();
         browse=(Button)v.findViewById(R.id.addProject_browse);
         upload=(Button)v.findViewById(R.id.addProject_upload);
         fileName=(TextView)v.findViewById(R.id.addProject_filename);

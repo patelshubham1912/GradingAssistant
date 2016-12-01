@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.shubham.Beans.course;
 import com.shubham.DAO.*;
 import org.w3c.dom.Text;
 
@@ -24,7 +25,7 @@ public class AddslidesFragment extends Fragment {
     TextView fileName;
     Button  browse;
     Button upload;
-    String courseId="C001";
+    String courseId;
 
     public AddslidesFragment() {
         // Required empty public constructor
@@ -37,6 +38,9 @@ public class AddslidesFragment extends Fragment {
 
 
         View v=  inflater.inflate(R.layout.activity_addslide, container, false);
+        SessionManager sessionManger = new SessionManager(getContext());
+        course course = sessionManger.getCourse();
+        courseId=course.getCourse_id();
         browse=(Button)v.findViewById(R.id.addSlide_browse);
         upload=(Button)v.findViewById(R.id.addSlide_upload);
         fileName=(TextView)v.findViewById(R.id.addSlide_filename);

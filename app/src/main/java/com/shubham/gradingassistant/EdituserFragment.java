@@ -54,9 +54,9 @@ public class EdituserFragment extends Fragment {
                         //admin_view=output;
                         //edituser_email
                         String[] str = output.split("#");
-                        if(str[0].equals("error")) {
+                        if(str[0].trim().equals("error")) {
 
-                            Toast.makeText(getContext(),str[1],Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(),"No user Found",Toast.LENGTH_SHORT).show();
                         } else {
 
                             edituser_email.setText(str[3]);

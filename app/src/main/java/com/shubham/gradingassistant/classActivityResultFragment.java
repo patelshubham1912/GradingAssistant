@@ -14,11 +14,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.shubham.Beans.course;
 import com.shubham.DAO.classActivityResultFragmentBackgroundTask;
 
 
 public class classActivityResultFragment extends Fragment {
 RelativeLayout relativeLayout;
+    TextView cId;
     String s[];
 
     public classActivityResultFragment() {
@@ -33,7 +35,12 @@ RelativeLayout relativeLayout;
 
         final View v=  inflater.inflate(R.layout.activity_viewclassactivityresult, container, false);
 
-        final String courseId="C001";
+        SessionManager sessionManger = new SessionManager(getContext());
+        course course = sessionManger.getCourse();
+        cId=(TextView)v.findViewById(R.id.viewClassActivityResult_courseId);
+
+        final String courseId=course.getCourse_id();
+        cId.setText("Course Id:"+courseId);
 
         classActivityResultFragmentBackgroundTask backgroundTask = new classActivityResultFragmentBackgroundTask(getContext(), new classActivityResultFragmentBackgroundTask.AsyncResponse() {
             @Override

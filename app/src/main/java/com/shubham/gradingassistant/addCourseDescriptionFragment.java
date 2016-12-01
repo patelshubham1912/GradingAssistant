@@ -9,12 +9,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.shubham.Beans.course;
 import com.shubham.DAO.*;
 import org.w3c.dom.Text;
 
 
 public class addCourseDescriptionFragment extends Fragment {
-    TextView courseId;
+    TextView courseIdText;
     TextView courseDescription;
     Button submit;
     String s[];
@@ -29,10 +30,13 @@ public class addCourseDescriptionFragment extends Fragment {
 
 
         View v=  inflater.inflate(R.layout.activity_addcoursedescription, container, false);
-        courseId=(TextView)v.findViewById(R.id.addCourseDescription_courseId);
+        SessionManager sessionManger = new SessionManager(getContext());
+        course course = sessionManger.getCourse();
+        final String courseId=course.getCourse_id();
+        courseIdText=(TextView)v.findViewById(R.id.addCourseDescription_courseId);
         courseDescription=(TextView)v.findViewById(R.id.addCourseDescription_courseDescription);
         submit=(Button)v.findViewById(R.id.addCourseDescription_submit);
-        final String courseId="C001";
+        courseIdText.setText("Course ID : "+courseId);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,6 +44,7 @@ public class addCourseDescriptionFragment extends Fragment {
                     @Override
                     public void processFinish(String output) {
                         Toast.makeText(getContext(),output,Toast.LENGTH_SHORT).show();
+
                     }
                 });
                 backgroundTask.execute(courseId,courseDescription.getText().toString());

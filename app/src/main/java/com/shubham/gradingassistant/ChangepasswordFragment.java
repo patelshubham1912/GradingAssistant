@@ -21,7 +21,6 @@ public class ChangepasswordFragment extends Fragment {
     EditText editTextnewpass;
     EditText editTextconfirmpass;
     Button confirmbutton;
-    admin_view admin_view=new admin_view();
     public ChangepasswordFragment() {
         // Required empty public constructor
     }
@@ -49,7 +48,9 @@ public class ChangepasswordFragment extends Fragment {
                String o=editTextoldpass.getText().toString();
                String n=editTextnewpass.getText().toString();
                String c=editTextconfirmpass.getText().toString();
-               String uid="abc";
+               SessionManager sessionManger = new SessionManager(getContext());
+               admin_view admin_view=sessionManger.getUserDetails();
+               String uid=admin_view.getUser_id().trim();
 
                if(n.equals(c)){
 

@@ -9,14 +9,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.shubham.Beans.course;
 import com.shubham.DAO.viewslidesFragmentBackgroundTask;
 
 
 public class viewslidesFragment extends Fragment {
     RelativeLayout relativeLayout;
     String s[];
+    TextView cId;
     public viewslidesFragment() {
         // Required empty public constructor
     }
@@ -30,7 +33,12 @@ public class viewslidesFragment extends Fragment {
         final View v=  inflater.inflate(R.layout.activity_viewslides, container, false);
         //   relativeLayout=(RelativeLayout)v.findViewById(R.id.viewAssignment_RelativeLayout);
 
-        final String courseId="C001";
+        SessionManager sessionManger = new SessionManager(getContext());
+        course course = sessionManger.getCourse();
+        cId=(TextView)v.findViewById(R.id.viewSlides_courseId);
+
+        final String courseId=course.getCourse_id();
+        cId.setText("Course Id:"+courseId);
 
         viewslidesFragmentBackgroundTask backgroundTask = new viewslidesFragmentBackgroundTask(getContext(), new viewslidesFragmentBackgroundTask.AsyncResponse() {
             @Override

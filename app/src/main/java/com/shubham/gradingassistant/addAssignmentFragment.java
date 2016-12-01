@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.shubham.Beans.course;
 import com.shubham.DAO.*;
 
 import java.io.File;
@@ -23,7 +24,7 @@ public class addAssignmentFragment extends Fragment {
     TextView fileName;
     Button  browse;
     Button upload;
-    String courseId="C001";
+    String courseId;
 
     public addAssignmentFragment() {
         // Required empty public constructor
@@ -36,6 +37,9 @@ public class addAssignmentFragment extends Fragment {
 
 
         View v=  inflater.inflate(R.layout.activity_addassignment, container, false);
+        SessionManager sessionManger = new SessionManager(getContext());
+        course course = sessionManger.getCourse();
+        courseId=course.getCourse_id();
         browse=(Button)v.findViewById(R.id.addAssignment_browse);
         upload=(Button)v.findViewById(R.id.addAssignment_upload);
         fileName=(TextView)v.findViewById(R.id.addAssignment_filename);
@@ -89,7 +93,7 @@ public class addAssignmentFragment extends Fragment {
                                 @Override
                                 public void processFinish(String output) {
 
-                                    Toast.makeText(getContext(),"output",Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getContext(),output,Toast.LENGTH_SHORT).show();
                                 }
                             });
                             backgroundTask.execute(courseId,"assignment",fileName.getText().toString());

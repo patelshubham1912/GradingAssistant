@@ -54,8 +54,10 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         Menu menu = navigationView.getMenu();
 
-        Intent i=getIntent();
-        admin_view=(admin_view)i.getSerializableExtra("admin_view");
+//        Intent i=getIntent();
+//        admin_view=(admin_view)i.getSerializableExtra("admin_view");
+        SessionManager sessionManger = new SessionManager(getBaseContext());
+        admin_view=sessionManger.getUserDetails();
         Toast.makeText(getBaseContext(),admin_view.getUser_type(),Toast.LENGTH_SHORT).show();
 
         if(admin_view.getUser_type().equals("admin"))
@@ -83,6 +85,11 @@ public class MainActivity extends AppCompatActivity
             menu.setGroupVisible(R.id.Student,true);
             menu.setGroupCheckable(R.id.Professor,false,false);
             menu.setGroupVisible(R.id.Professor,false);
+
+            viewCourseDescriptionFragment fragment2 = new viewCourseDescriptionFragment();
+            FragmentTransaction fragmentTransaction2 = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction2.replace(R.id.fragment_container,fragment2);
+            fragmentTransaction2.commit();
         }else
         {
             //Professor View
@@ -93,6 +100,11 @@ public class MainActivity extends AppCompatActivity
             menu.setGroupVisible(R.id.Student,true);
             menu.setGroupCheckable(R.id.Professor,true,true);
             menu.setGroupVisible(R.id.Professor,true);
+
+            viewCourseDescriptionFragment fragment2 = new viewCourseDescriptionFragment();
+            FragmentTransaction fragmentTransaction2 = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction2.replace(R.id.fragment_container,fragment2);
+            fragmentTransaction2.commit();
         }
 //        viewCourseDescriptionFragment fragment2 = new viewCourseDescriptionFragment();
 //        FragmentTransaction fragmentTransaction2 = getSupportFragmentManager().beginTransaction();
@@ -147,7 +159,7 @@ public class MainActivity extends AppCompatActivity
 //            fragmentTransaction.replace(R.id.fragment_container,fragment);
 //            fragmentTransaction.commit();
 //        }
-       if (id == R.id.nav_changepassword) {
+       if (id == R.id.nav_changepassword_stud || id==R.id.nav_changepassword_prof || id==R.id.nav_changepassword_admin) {
             // Second Fragment
             ChangepasswordFragment fragment = new ChangepasswordFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -229,13 +241,7 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.fragment_container,fragment);
             fragmentTransaction.commit();
         }
-        else if (id == R.id.nav_registerForCourses) {
-            // Second Fragment
-            RegistercourseFragment fragment = new RegistercourseFragment();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container,fragment);
-            fragmentTransaction.commit();
-        }else if(id==R.id.nav_viewcourseDescription)
+       else if(id==R.id.nav_viewcourseDescription)
         {
             viewCourseDescriptionFragment fragment = new viewCourseDescriptionFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -302,13 +308,6 @@ public class MainActivity extends AppCompatActivity
         {
             Intent intent=new Intent(this,LoginActivity.class);
             startActivity(intent);
-        }
-        else if(id==R.id.nav_registerForDegreePlan)
-        {
-            RegisterForDegreePlanFragment fragment = new RegisterForDegreePlanFragment();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container,fragment);
-            fragmentTransaction.commit();
         }
         else if(id==R.id.nav_graphicalrepresentation)
         {

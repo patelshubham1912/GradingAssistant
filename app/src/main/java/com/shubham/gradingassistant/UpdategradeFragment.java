@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.shubham.Beans.course;
 import com.shubham.DAO.UpdategradeFragmentBackgroundTask;
 
 
@@ -40,7 +41,10 @@ public class UpdategradeFragment extends Fragment {
         midTermText=(EditText)v.findViewById(R.id.updateGrades_MidTerm);
         finalText=(EditText)v.findViewById(R.id.updateGrades_Final);
         quiz=(EditText)v.findViewById(R.id.updateGrades_Quiz);
-
+        SessionManager sessionManger = new SessionManager(getContext());
+        course course = sessionManger.getCourse();
+        final String courseId=course.getCourse_id().trim();
+        courseIdText.setText(courseId);
         searchButton=(Button)v.findViewById(R.id.UpdateGrades_search);
 
         updateButton=(Button)v.findViewById(R.id.UpdateGrades_update);

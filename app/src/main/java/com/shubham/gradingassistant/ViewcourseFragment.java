@@ -53,7 +53,7 @@ public class ViewcourseFragment extends Fragment {
                         viewCourse_courseID.setText(coursedetails[0]);
                         viewCourse_coursename.setText(coursedetails[1]);
                         viewCourse_professor.setText(coursedetails[2]);
-                        viewCourse_majortype.setText(coursedetails[2]);
+                        viewCourse_majortype.setText(coursedetails[3]);
 
                      //   admin_view=output;
 

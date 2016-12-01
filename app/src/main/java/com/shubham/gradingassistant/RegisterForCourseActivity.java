@@ -29,6 +29,7 @@ public class RegisterForCourseActivity extends Activity {
     Spinner spinner2;
     Spinner spinner3;
     Button registerButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +48,10 @@ public class RegisterForCourseActivity extends Activity {
                 String spinner1text=spinner1.getSelectedItem().toString();
                 String spinner2text=spinner2.getSelectedItem().toString();
                 String spinner3text=spinner3.getSelectedItem().toString();
-                String userid="A0004";
+
+                SessionManager sessionManger = new SessionManager(getBaseContext());
+                final admin_view admin_view=sessionManger.getUserDetails();
+                String userid=admin_view.getUser_id().trim();
                 RegistercourseFragmentBackgroundTask backgroundTask = new RegistercourseFragmentBackgroundTask(getBaseContext(), new RegistercourseFragmentBackgroundTask.AsyncResponse() {
                     @Override
                     public void processFinish(String output) {

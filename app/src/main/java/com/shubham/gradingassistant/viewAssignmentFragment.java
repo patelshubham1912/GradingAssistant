@@ -9,14 +9,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.shubham.Beans.course;
 import com.shubham.DAO.viewAssignmentFragmentBackgroundTask;
+
+import org.w3c.dom.Text;
 
 
 public class viewAssignmentFragment extends Fragment {
 RelativeLayout relativeLayout;
-    String s[];
+    TextView cId;
+        String s[];
     public viewAssignmentFragment() {
         // Required empty public constructor
     }
@@ -29,8 +34,12 @@ RelativeLayout relativeLayout;
 
         final View v=  inflater.inflate(R.layout.activity_viewassignment, container, false);
      //   relativeLayout=(RelativeLayout)v.findViewById(R.id.viewAssignment_RelativeLayout);
+        SessionManager sessionManger = new SessionManager(getContext());
+        course course = sessionManger.getCourse();
+        cId=(TextView)v.findViewById(R.id.viewAssignment_courseId);
 
-        final String courseId="C001";
+        final String courseId=course.getCourse_id();
+        cId.setText("Course Id:"+courseId);
 
         viewAssignmentFragmentBackgroundTask backgroundTask = new viewAssignmentFragmentBackgroundTask(getContext(), new viewAssignmentFragmentBackgroundTask.AsyncResponse() {
             @Override

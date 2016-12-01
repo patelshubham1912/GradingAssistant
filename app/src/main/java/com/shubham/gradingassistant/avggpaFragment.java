@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.shubham.Beans.course;
 import com.shubham.DAO.avggpaFragmentBackgroundTask;
 
 import org.w3c.dom.Text;
@@ -31,7 +32,9 @@ public class avggpaFragment extends Fragment {
 
         View v=  inflater.inflate(R.layout.activity_avggpa, container, false);
 
-        final String courseId="C001";
+        SessionManager sessionManger = new SessionManager(getContext());
+        course course = sessionManger.getCourse();
+        final String courseId=course.getCourse_id().trim();
         avgclassgpa = (TextView)v.findViewById(R.id.avgclassgpa);
 
         avggpaFragmentBackgroundTask backgroundTask = new avggpaFragmentBackgroundTask(getContext(), new avggpaFragmentBackgroundTask.AsyncResponse() {

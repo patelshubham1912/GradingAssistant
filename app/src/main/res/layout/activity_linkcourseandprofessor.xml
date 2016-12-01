@@ -22,7 +22,7 @@
         android:layout_below="@+id/linkcourseandprofessor_courseId"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:hint="Professor Name" />
+        android:hint="Professor Id" />
 
     <Button
         android:layout_width="wrap_content"

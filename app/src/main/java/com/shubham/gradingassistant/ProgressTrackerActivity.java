@@ -27,7 +27,8 @@ public class ProgressTrackerActivity extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_progresstracker);
-
+        SessionManager sessionManager = new SessionManager(getBaseContext());
+        admin_view admin_view  = sessionManager.getUserDetails();
         textViewMajorType = (TextView)findViewById(R.id.textViewMajorType);
         textViewSpecialization = (TextView)findViewById(R.id.textViewSpecialization);
         textViewCourse3 = (TextView)findViewById(R.id.textViewCourse3);
@@ -57,8 +58,7 @@ public class ProgressTrackerActivity extends Activity{
 
             }
         });
-        SessionManager sessionManager = new SessionManager(getBaseContext());
-        admin_view admin_view  = sessionManager.getUserDetails();
+
 
         backgroundTask.execute(admin_view.getUser_id().trim());
 

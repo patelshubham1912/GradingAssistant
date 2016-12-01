@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.shubham.Beans.admin_view;
 import com.shubham.DAO.sendNotificationFragmentBackgroundTask;
 
 
@@ -36,11 +37,12 @@ public class sendNotificationFragment extends Fragment {
         subjectText = (EditText)v.findViewById(R.id.sendNotification_subject);
         messageText = (EditText)v.findViewById(R.id.sendNotification_message);
         sendButton =(Button)v.findViewById(R.id.sendNotification_send);
-
+        SessionManager sessionManger = new SessionManager(getContext());
+        final admin_view admin_view=sessionManger.getUserDetails();
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String sender="A001";
+                String sender=admin_view.getUser_id().trim();
                 String to=toText.getText().toString();
                 String subject=subjectText.getText().toString();
                 String message=messageText.getText().toString();
@@ -57,7 +59,6 @@ public class sendNotificationFragment extends Fragment {
                 backgroundTask.execute(sender,to,subject,message);
             }
         });
-
 
         return v;
 

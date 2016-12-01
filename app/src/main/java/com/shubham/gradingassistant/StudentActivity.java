@@ -43,7 +43,7 @@ public class StudentActivity extends Activity {
        SessionManager sessionManger = new SessionManager(getBaseContext());
         admin_view=sessionManger.getUserDetails();
        notificationsButton = (Button) findViewById(R.id.fragment_first_notifications);
-
+        progress_tracker=(Button)findViewById(R.id.progress_tracker);
 
         StudentActivityBackgroundTask backgroundTask = new StudentActivityBackgroundTask(this, new StudentActivityBackgroundTask.AsyncResponse() {
             @Override
@@ -90,8 +90,10 @@ public class StudentActivity extends Activity {
                         course1.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
+                                SessionManager sessionManger = new SessionManager(getBaseContext());
+                                sessionManger.createCourse(course1.getText().toString());
                                 Intent intent = new Intent(getBaseContext(), MainActivity.class);
-                                intent.putExtra("admin_view", admin_view);
+                                //intent.putExtra("admin_view", admin_view);
                                 startActivity(intent);
                             }
                         });
@@ -99,8 +101,10 @@ public class StudentActivity extends Activity {
                         course2.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
+                                SessionManager sessionManger = new SessionManager(getBaseContext());
+                                sessionManger.createCourse(course2.getText().toString());
                                 Intent intent = new Intent(getBaseContext(), MainActivity.class);
-                                intent.putExtra("admin_view", admin_view);
+                               // intent.putExtra("admin_view", admin_view);
                                 startActivity(intent);
                             }
                         });
@@ -108,8 +112,10 @@ public class StudentActivity extends Activity {
                         course3.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
+                                SessionManager sessionManger = new SessionManager(getBaseContext());
+                                sessionManger.createCourse(course3.getText().toString());
                                 Intent intent = new Intent(getBaseContext(), MainActivity.class);
-                                intent.putExtra("admin_view", admin_view);
+                                //intent.putExtra("admin_view", admin_view);
                                 startActivity(intent);
                             }
                         });
@@ -126,7 +132,7 @@ public class StudentActivity extends Activity {
 
                     }else {
                     Intent intent = new Intent(getBaseContext(), RegisterForDegreePlanActivity.class);
-                    intent.putExtra("admin_view", admin_view);
+                    //intent.putExtra("admin_view", admin_view);
                     startActivity(intent);
                     }
 

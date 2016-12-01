@@ -31,6 +31,7 @@ public class adminHomeFragment extends Fragment {
     TextView role;
     Button notifications;
     String s[];
+    admin_view admin_view;
     public adminHomeFragment() {
         // Required empty public constructor
     }
@@ -42,9 +43,18 @@ public class adminHomeFragment extends Fragment {
 
 
         View v=  inflater.inflate(R.layout.activity_adminhomescreen, container, false);
+        SessionManager sessionManger = new SessionManager(getContext());
+        admin_view=sessionManger.getUserDetails();
+
         admin_name=(TextView) v.findViewById(R.id.admin_name);
+        admin_name.setText(admin_view.getUser_name());
+
         email=(TextView)v.findViewById(R.id.admin_email);
+        email.setText(admin_view.getEmail_id());
+
         role=(TextView)v.findViewById(R.id.admin_role);
+        role.setText(admin_view.getUser_type());
+
         notifications=(Button)v.findViewById(R.id.admin_notifications);
 
 
@@ -75,7 +85,7 @@ public class adminHomeFragment extends Fragment {
 
             }
         });
-        backgroundTask.execute("ad001");
+        backgroundTask.execute(admin_view.getUser_id().trim());
 
 
         return v;

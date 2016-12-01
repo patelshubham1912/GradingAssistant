@@ -21,6 +21,7 @@ import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 import com.jjoe64.graphview.series.OnDataPointTapListener;
 import com.jjoe64.graphview.series.Series;
+import com.shubham.Beans.course;
 import com.shubham.DAO.classActivityResultFragmentBackgroundTask;
 
 
@@ -43,7 +44,9 @@ GraphView graphView;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         final View v=  inflater.inflate(R.layout.activity_graphicalrepresentation, container, false);
-        String courseId="C001";
+        SessionManager sessionManger = new SessionManager(getContext());
+        course course = sessionManger.getCourse();
+        final String courseId=course.getCourse_id();
         classActivityResultFragmentBackgroundTask backgroundTask = new classActivityResultFragmentBackgroundTask(getContext(), new classActivityResultFragmentBackgroundTask.AsyncResponse() {
             @Override
             public void processFinish(String output) {

@@ -27,13 +27,16 @@ public class ProfessorActivity extends Activity {
     Button course1;
     Button course2;
     Button course3;
+    admin_view admin_view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_second);
 
-        Intent i1 = getIntent();
-       final admin_view admin_view = (admin_view) i1.getSerializableExtra("admin_view");
+//        Intent i1 = getIntent();
+//       final admin_view admin_view = (admin_view) i1.getSerializableExtra("admin_view");
+        SessionManager sessionManger = new SessionManager(getBaseContext());
+        admin_view=sessionManger.getUserDetails();
         notificationsButton = (Button) findViewById(R.id.fragment_second_notifications);
         ProfessorActivityBackgroundTask backgroundTask = new ProfessorActivityBackgroundTask(this, new ProfessorActivityBackgroundTask.AsyncResponse() {
             @Override
@@ -73,8 +76,10 @@ public class ProfessorActivity extends Activity {
                 course1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        SessionManager sessionManger = new SessionManager(getBaseContext());
+                        sessionManger.createCourse(course1.getText().toString());
                         Intent intent=new Intent(getBaseContext() ,MainActivity.class);
-                        intent.putExtra("admin_view", admin_view);
+                       // intent.putExtra("admin_view", admin_view);
                         startActivity(intent);
                     }
                 });
@@ -82,8 +87,10 @@ public class ProfessorActivity extends Activity {
                 course2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        SessionManager sessionManger = new SessionManager(getBaseContext());
+                        sessionManger.createCourse(course2.getText().toString());
                         Intent intent=new Intent(getBaseContext() ,MainActivity.class);
-                        intent.putExtra("admin_view", admin_view);
+                       // intent.putExtra("admin_view", admin_view);
                         startActivity(intent);
                     }
                 });
@@ -91,8 +98,10 @@ public class ProfessorActivity extends Activity {
                 course3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        SessionManager sessionManger = new SessionManager(getBaseContext());
+                        sessionManger.createCourse(course3.getText().toString());
                         Intent intent=new Intent(getBaseContext() ,MainActivity.class);
-                        intent.putExtra("admin_view", admin_view);
+                     //   intent.putExtra("admin_view", admin_view);
                         startActivity(intent);
                     }
                 });
