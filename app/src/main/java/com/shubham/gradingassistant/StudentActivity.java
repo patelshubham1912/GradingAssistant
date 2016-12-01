@@ -17,7 +17,7 @@ import android.widget.Toast;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.shubham.Beans.admin_view;
 import com.shubham.DAO.*;
-
+import com.shubham.gradingassistant.*;
 /**
  * Created by $hubham on 27/11/2016.
  */
@@ -32,14 +32,17 @@ public class StudentActivity extends Activity {
     Button course3;
     TextView gpaText;
     Button progress_tracker;
+    admin_view admin_view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_first);
 
-        Intent i1 = getIntent();
-       final admin_view admin_view = (admin_view) i1.getSerializableExtra("admin_view");
-        notificationsButton = (Button) findViewById(R.id.fragment_first_notifications);
+      //  Intent i1 = getIntent();
+     //  final admin_view admin_view = (admin_view) i1.getSerializableExtra("admin_view");
+       SessionManager sessionManger = new SessionManager(getBaseContext());
+        admin_view=sessionManger.getUserDetails();
+       notificationsButton = (Button) findViewById(R.id.fragment_first_notifications);
 
 
         StudentActivityBackgroundTask backgroundTask = new StudentActivityBackgroundTask(this, new StudentActivityBackgroundTask.AsyncResponse() {
