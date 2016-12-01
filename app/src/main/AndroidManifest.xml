@@ -15,6 +15,7 @@
         <activity android:name=".ProfessorActivity"></activity>
         <activity android:name=".RegisterForCourseActivity"></activity>
         <activity android:name=".RegisterForDegreePlanActivity"></activity>
+        <activity android:name=".ProgressTrackerActivity"></activity>
 
         <activity
             android:name=".LoginActivity"
